@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRTStateMachines="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRTStateMachines="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <uml:Model xmi:id="_sXO60DuNEemh7Jv-t4KSvQ" name="project_client">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sXO60TuNEemh7Jv-t4KSvQ" source="http://www.eclipse.org/papyrus-rt/language/1.0.0">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sXO60juNEemh7Jv-t4KSvQ" key="language" value="umlrt-cpp"/>
@@ -10,9 +10,18 @@
       <ownedAttribute xmi:type="uml:Port" xmi:id="_Bg9GkDuOEemh7Jv-t4KSvQ" name="log" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
         <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__-_78D-8EemACYDE-qKd5g" name="board" visibility="protected" type="_-w7mUD-8EemACYDE-qKd5g" isOrdered="true" aggregation="composite"/>
       <ownedConnector xmi:type="uml:Connector" xmi:id="_A17zoDuOEemh7Jv-t4KSvQ" name="RTConnector1">
         <end xmi:type="uml:ConnectorEnd" xmi:id="_A2ChUDuOEemh7Jv-t4KSvQ" role="_6kAikDuNEemh7Jv-t4KSvQ"/>
         <end xmi:type="uml:ConnectorEnd" xmi:id="_A2ChUTuOEemh7Jv-t4KSvQ" partWithPort="_0T2zIDuNEemh7Jv-t4KSvQ" role="_8mf-wDuNEemh7Jv-t4KSvQ"/>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_k8Y0wD-9EemACYDE-qKd5g" name="RTConnector2">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_k8neQD-9EemACYDE-qKd5g" partWithPort="__-_78D-8EemACYDE-qKd5g" role="_N_kTsD-9EemACYDE-qKd5g"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_k8oFUD-9EemACYDE-qKd5g" partWithPort="_0T2zIDuNEemh7Jv-t4KSvQ" role="_LTNbID-9EemACYDE-qKd5g"/>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_mIq44EBFEemqJPrZwKkwWQ" name="RTConnector3">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_mIq44UBFEemqJPrZwKkwWQ" partWithPort="__-_78D-8EemACYDE-qKd5g" role="_dMdL0EBFEemqJPrZwKkwWQ"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_mIq44kBFEemqJPrZwKkwWQ" partWithPort="_0T2zIDuNEemh7Jv-t4KSvQ" role="_bNFVEEBFEemqJPrZwKkwWQ"/>
       </ownedConnector>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_DOfmcDuOEemh7Jv-t4KSvQ" name="Top_sm" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_DOx6UDuOEemh7Jv-t4KSvQ" name="Region">
@@ -36,6 +45,8 @@ startGame.start().send();</body>
       <ownedAttribute xmi:type="uml:Port" xmi:id="_xpUqEDuOEemh7Jv-t4KSvQ" name="mqtt" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
         <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXMcnWEeiTgcmKwS4Zdw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_LTNbID-9EemACYDE-qKd5g" name="move_valid" visibility="public" type="_GkELcD-9EemACYDE-qKd5g" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_bNFVEEBFEemqJPrZwKkwWQ" name="board_update" visibility="public" type="_YQBuEEBFEemqJPrZwKkwWQ" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="true"/>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_F5Kc8DuOEemh7Jv-t4KSvQ" name="Player2_sm" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_F5WqMDuOEemh7Jv-t4KSvQ" name="Region">
           <transition xmi:type="uml:Transition" xmi:id="_F5ksoDuOEemh7Jv-t4KSvQ" name="Initial" source="_F5ZtgDuOEemh7Jv-t4KSvQ" target="_F5gbMDuOEemh7Jv-t4KSvQ">
@@ -48,6 +59,13 @@ startGame.start().send();</body>
             <trigger xmi:type="uml:Trigger" xmi:id="_lkXqcDuOEemh7Jv-t4KSvQ" event="_kXJpYDuOEemh7Jv-t4KSvQ" port="_8mf-wDuNEemh7Jv-t4KSvQ"/>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_zryREDuOEemh7Jv-t4KSvQ" name="" kind="external" source="_geIwcDuOEemh7Jv-t4KSvQ" target="_tnaT0DuOEemh7Jv-t4KSvQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_x3AtkD-8EemACYDE-qKd5g" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player2] Connected to Server!&quot;);&#xD;
+mqtt.publish(&quot;Player2Connected&quot;,&quot;I'm Ready to Play&quot;);&#xD;
+log.log(&quot;[Player2] Waiting for Player 1 move&quot;);&#xD;
+mqtt.subscribe(&quot;Player1MoveDone&quot;);</body>
+            </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_6kiRkDuOEemh7Jv-t4KSvQ" port="_xpUqEDuOEemh7Jv-t4KSvQ">
               <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXQsnWEeiTgcmKwS4Zdw"/>
             </trigger>
@@ -61,10 +79,48 @@ startGame.start().send();</body>
               <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXRMnWEeiTgcmKwS4Zdw"/>
             </trigger>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_O01YoDuoEemh7Jv-t4KSvQ" name="" kind="external" source="_tnaT0DuOEemh7Jv-t4KSvQ" target="_Ly0ZIDuoEemh7Jv-t4KSvQ">
+          <transition xmi:type="uml:Transition" xmi:id="_O01YoDuoEemh7Jv-t4KSvQ" name="" kind="external" source="_tnaT0DuOEemh7Jv-t4KSvQ" target="_nlzv0EBGEemqJPrZwKkwWQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_6HZBoD-3EemACYDE-qKd5g" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player2] Player 1 selected move: %s&quot;, payload);&#xD;
+log.log(&quot;[Player2] Sending Player 1 move to update Board&quot;);&#xD;
+board_update.Player1MoveMessage(strdup(payload)).send();</body>
+            </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_PUizcDuoEemh7Jv-t4KSvQ" port="_xpUqEDuOEemh7Jv-t4KSvQ">
               <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXQcnWEeiTgcmKwS4Zdw"/>
             </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_we51sD-9EemACYDE-qKd5g" name="" kind="external" source="_Ly0ZIDuoEemh7Jv-t4KSvQ" target="_tnaT0DuOEemh7Jv-t4KSvQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_APi1MD_EEemACYDE-qKd5g" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>using namespace std;&#xD;
+log.log(&quot;[Player 2] Player 2 move valid, sending to Player 1...&quot;);&#xD;
+&#xD;
+char cstr[5] = {'\0'};&#xD;
+cstr[0] = startCol + '0';&#xD;
+cstr[1] = startRow + '0';&#xD;
+cstr[2] = endCol + '0';&#xD;
+cstr[3] = endRow + '0';&#xD;
+&#xD;
+mqtt.publish(&quot;Player2MoveDone&quot;,cstr);&#xD;
+log.log(&quot;[Player2] Waiting for Player 1 move&quot;);&#xD;
+mqtt.subscribe(&quot;Player1MoveDone&quot;);</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_i66aUD-_EemACYDE-qKd5g" event="_4CcfoD-9EemACYDE-qKd5g" port="_LTNbID-9EemACYDE-qKd5g"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ludgAD-_EemACYDE-qKd5g" name="" kind="external" source="_Ly0ZIDuoEemh7Jv-t4KSvQ" target="_Ly0ZIDuoEemh7Jv-t4KSvQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_uQtq8EAtEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player2] Player2 entered an invalid move, try again&quot;);</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_pZjRsD-_EemACYDE-qKd5g" event="_5Q1lYD-9EemACYDE-qKd5g" port="_LTNbID-9EemACYDE-qKd5g"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_vM9HYEBGEemqJPrZwKkwWQ" kind="external" source="_nlzv0EBGEemqJPrZwKkwWQ" target="_Ly0ZIDuoEemh7Jv-t4KSvQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_nEiesEBaEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player2] Board updated with Player 1 move, moving to Player 2 turn&quot;);</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_CPcg4EBHEemqJPrZwKkwWQ" event="_AiFnMEBHEemqJPrZwKkwWQ" port="_bNFVEEBFEemqJPrZwKkwWQ"/>
           </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_F5ZtgDuOEemh7Jv-t4KSvQ" kind="initial"/>
           <subvertex xmi:type="uml:State" xmi:id="_F5gbMDuOEemh7Jv-t4KSvQ" name="State1"/>
@@ -74,21 +130,27 @@ startGame.start().send();</body>
               <body>mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Ting&quot;,  &quot;queens&quot;);</body>
             </entry>
           </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_tnaT0DuOEemh7Jv-t4KSvQ" name="Connected to Server">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_-iswQDuOEemh7Jv-t4KSvQ" name="Entry" isReentrant="false">
-              <language>C++</language>
-              <body>log.log(&quot;[Player2] Connected to Server!&quot;);&#xD;
-mqtt.publish(&quot;Player2Connected&quot;,&quot;I'm Ready to Play&quot;);&#xD;
-mqtt.subscribe(&quot;Player1MoveDone&quot;);</body>
-            </entry>
-          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_tnaT0DuOEemh7Jv-t4KSvQ" name="Player1Turn"/>
           <subvertex xmi:type="uml:State" xmi:id="_-0j8UDuOEemh7Jv-t4KSvQ" name="error"/>
           <subvertex xmi:type="uml:State" xmi:id="_Ly0ZIDuoEemh7Jv-t4KSvQ" name="Player2_turn">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_gBXuYDuuEemh7Jv-t4KSvQ" name="Entry" isReentrant="false">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_BmabID-8EemACYDE-qKd5g" name="Entry" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;[Player2] Player 1 done move!&quot;);</body>
+              <body>using namespace std;&#xD;
+&#xD;
+//Get Player 2 moves&#xD;
+log.log(&quot;[Player2]--------------Player 2 turn&quot;);&#xD;
+string startMove;&#xD;
+string endMove;&#xD;
+cout&lt;&lt;&quot;Player 2 enter start move: &quot;;&#xD;
+getline(cin,startMove);&#xD;
+cout&lt;&lt;&quot;Player 2 enter end move: &quot;;&#xD;
+getline(cin,endMove);&#xD;
+&#xD;
+//Validate Player2 moves&#xD;
+move_valid.Player2Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
             </entry>
           </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_nlzv0EBGEemqJPrZwKkwWQ" name="Updating Board"/>
         </region>
       </ownedBehavior>
     </packagedElement>
@@ -106,6 +168,242 @@ mqtt.subscribe(&quot;Player1MoveDone&quot;);</body>
       <packagedElement xmi:type="uml:Interface" xmi:id="_3aZtUTuNEemh7Jv-t4KSvQ" name="startGameIO"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_3akFYDuNEemh7Jv-t4KSvQ" client="_3ZxbMDuNEemh7Jv-t4KSvQ" supplier="_3aZtUTuNEemh7Jv-t4KSvQ"/>
       <packagedElement xmi:type="uml:CallEvent" xmi:id="_kXJpYDuOEemh7Jv-t4KSvQ" operation="_kWUi8DuOEemh7Jv-t4KSvQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-w7mUD-8EemACYDE-qKd5g" name="Board" classifierBehavior="_uOYAsD_BEemACYDE-qKd5g" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_N_kTsD-9EemACYDE-qKd5g" name="move_valid" visibility="public" type="_GkELcD-9EemACYDE-qKd5g" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_yXWBMD_BEemACYDE-qKd5g" name="log" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3OgN4EBEEemqJPrZwKkwWQ" name="P2MoveValid" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_665nIEBEEemqJPrZwKkwWQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_dMdL0EBFEemqJPrZwKkwWQ" name="board_update" visibility="public" type="_YQBuEEBFEemqJPrZwKkwWQ" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_57qAkEBYEemqJPrZwKkwWQ" name="startCol">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AHG2MEBZEemqJPrZwKkwWQ" name="startRow">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AOGPAEBZEemqJPrZwKkwWQ" name="endCol">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ASowwEBZEemqJPrZwKkwWQ" name="endRow">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_uOYAsD_BEemACYDE-qKd5g" name="Board_sm" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_uOqUkD_BEemACYDE-qKd5g" name="Region">
+          <transition xmi:type="uml:Transition" xmi:id="_uO9PgD_BEemACYDE-qKd5g" name="Initial" source="_uOvNED_BEemACYDE-qKd5g" target="_uO5lID_BEemACYDE-qKd5g">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_wx6UcD_BEemACYDE-qKd5g" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Board] Starting up&quot;);</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_qOukwEBEEemqJPrZwKkwWQ" name="" kind="external" source="_RYXCMD_CEemACYDE-qKd5g" target="_o0TOIEBEEemqJPrZwKkwWQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_QtfwwEBFEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>using namespace std;&#xD;
+char * startMove = strdup(start);&#xD;
+char * endMove = strdup(end);&#xD;
+&#xD;
+startRow = startMove[1] - '0';&#xD;
+endRow = endMove[1] - '0';&#xD;
+&#xD;
+startRow = 8 - startRow;&#xD;
+endRow = 8 - endRow;&#xD;
+&#xD;
+startCol = GetColIndex(startMove);&#xD;
+endCol = GetColIndex(endMove);&#xD;
+&#xD;
+P2MoveValid = true;</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_0qlfoEBEEemqJPrZwKkwWQ" event="_67-RgD-9EemACYDE-qKd5g" port="_N_kTsD-9EemACYDE-qKd5g"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_s5AZsEBEEemqJPrZwKkwWQ" kind="external" source="_o0TOIEBEEemqJPrZwKkwWQ" target="_uO5lID_BEemACYDE-qKd5g">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_5VYDsEBYEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);&#xD;
+updateBoard(startCol,startRow,endCol,endRow);&#xD;
+move_valid.Player2MoveValid(startCol, startRow, endCol, endRow).send();&#xD;
+printBoard();</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_utzYIEBEEemqJPrZwKkwWQ" guard="_-9sHIEBEEemqJPrZwKkwWQ" kind="external" source="_o0TOIEBEEemqJPrZwKkwWQ" target="_RYXCMD_CEemACYDE-qKd5g">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_-9sHIEBEEemqJPrZwKkwWQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_-914IEBEEemqJPrZwKkwWQ">
+                <language>C++</language>
+                <body>return (P2MoveValid == false);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_DrQCcEBFEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Board] Player2 gave an invalid move&quot;);&#xD;
+move_valid.Player2MoveInvalid().send();</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_02_ugEBFEemqJPrZwKkwWQ" name="" kind="external" source="_uO5lID_BEemACYDE-qKd5g" target="_RYXCMD_CEemACYDE-qKd5g">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_gXVQwEBjEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>using namespace std;&#xD;
+&#xD;
+//Convert Player 1 message to integer indexes&#xD;
+int P1_startCol = Player1Move[0] - '0';&#xD;
+int P1_startRow = Player1Move[1] - '0';&#xD;
+int P1_endCol = Player1Move[2] - '0';&#xD;
+int P1_endRow = Player1Move[3] - '0';&#xD;
+&#xD;
+//Update Board with Player 1 moves&#xD;
+log.log(&quot;[Board] Updating board with Player 1 moves&quot;);&#xD;
+updateBoard(P1_startCol,P1_startRow,P1_endCol,P1_endRow);&#xD;
+board_update.BoardUpdated().send();&#xD;
+printBoard();</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_Ku56UEBkEemqJPrZwKkwWQ" event="_YXDGoEBGEemqJPrZwKkwWQ" port="_dMdL0EBFEemqJPrZwKkwWQ"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_uOvNED_BEemACYDE-qKd5g" kind="initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_uO5lID_BEemACYDE-qKd5g" name="Player1Turn"/>
+          <subvertex xmi:type="uml:State" xmi:id="_RYXCMD_CEemACYDE-qKd5g" name="Player2Turn"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_o0TOIEBEEemqJPrZwKkwWQ" kind="choice"/>
+        </region>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JZnAgEBSEemqJPrZwKkwWQ" specification="_vFd-UEBREemqJPrZwKkwWQ">
+        <language>C++</language>
+        <body>    using namespace std;&#xD;
+    char charcol1 = col[0];&#xD;
+    int col_index;&#xD;
+    switch(charcol1){&#xD;
+    case 'A': col_index = 0; break;&#xD;
+    case 'B': col_index = 1; break;&#xD;
+    case 'C': col_index = 2; break;&#xD;
+    case 'D': col_index = 3; break;&#xD;
+    case 'E': col_index = 4; break;&#xD;
+    case 'F': col_index = 5; break;&#xD;
+    case 'G': col_index = 6; break;&#xD;
+    case 'H': col_index = 7; break;&#xD;
+    }&#xD;
+&#xD;
+return col_index;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Q-FekEBSEemqJPrZwKkwWQ">
+        <language>C++</language>
+        <body>using namespace std;&#xD;
+char charcol1 = endCol[0];&#xD;
+int endcol;&#xD;
+switch(charcol1){&#xD;
+	case 'A': endcol = 0; break;&#xD;
+	case 'B': endcol = 1; break;&#xD;
+	case 'C': endcol = 2; break;&#xD;
+	case 'D': endcol = 3; break;&#xD;
+	case 'E': endl = 4; break;&#xD;
+	case 'F': startcol = 5; break;&#xD;
+	case 'G': startcol = 6; break;&#xD;
+	case 'H': startcol = 7; break;&#xD;
+}&#xD;
+return startcol;</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_cdAp4EBbEemqJPrZwKkwWQ" specification="_K0iXUEBbEemqJPrZwKkwWQ">
+        <language>C++</language>
+        <body>    ChessBoard[endRow][endCol] = ChessBoard[startRow][startCol];&#xD;
+    ChessBoard[startRow][startCol] = 0;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NV8NAEBvEemqJPrZwKkwWQ" specification="_Bp-8MEBvEemqJPrZwKkwWQ">
+        <language>C++</language>
+        <body>    using namespace std;&#xD;
+    for(int i = 0; i &lt; 8 ; i++){&#xD;
+    for(int j = 0; j &lt; 8; j++){&#xD;
+    cout&lt;&lt;ChessBoard[i][j];&#xD;
+    }&#xD;
+    cout&lt;&lt;&quot;\n&quot;;&#xD;
+ }&#xD;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vFd-UEBREemqJPrZwKkwWQ" name="GetColIndex" concurrency="guarded" method="_JZnAgEBSEemqJPrZwKkwWQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2CZUMEBREemqJPrZwKkwWQ" name="col">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DpEyAEBiEemqJPrZwKkwWQ" name="index" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_K0iXUEBbEemqJPrZwKkwWQ" name="updateBoard" concurrency="guarded" method="_cdAp4EBbEemqJPrZwKkwWQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OkxuwEBbEemqJPrZwKkwWQ" name="startCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Qoy08EBbEemqJPrZwKkwWQ" name="startRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_RYqLoEBbEemqJPrZwKkwWQ" name="endCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UuffAEBbEemqJPrZwKkwWQ" name="endRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Bp-8MEBvEemqJPrZwKkwWQ" name="printBoard" concurrency="guarded" method="_NV8NAEBvEemqJPrZwKkwWQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_GkIc4D-9EemACYDE-qKd5g" name="move_valid">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_GkELcD-9EemACYDE-qKd5g" name="move_valid">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GkRm0D-9EemACYDE-qKd5g" client="_GkELcD-9EemACYDE-qKd5g" supplier="_GkN8cD-9EemACYDE-qKd5g" contract="_GkN8cD-9EemACYDE-qKd5g"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Gkg3Yj-9EemACYDE-qKd5g" client="_GkELcD-9EemACYDE-qKd5g" supplier="_Gkg3YD-9EemACYDE-qKd5g" contract="_Gkg3YD-9EemACYDE-qKd5g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_GkN8cD-9EemACYDE-qKd5g" name="move_valid">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_67GHwD-9EemACYDE-qKd5g" name="Player2Move">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8X1LgD-9EemACYDE-qKd5g" name="start">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dw0LQD--EemACYDE-qKd5g" name="end">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_GkXtcD-9EemACYDE-qKd5g" name="move_valid~">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_4Bju0D-9EemACYDE-qKd5g" name="Player2MoveValid">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_s-74AEBDEemqJPrZwKkwWQ" name="startCol">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ts04wEBDEemqJPrZwKkwWQ" name="startRow">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_uKnoAEBDEemqJPrZwKkwWQ" name="endCol">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_uf7JoEBDEemqJPrZwKkwWQ" name="endRow">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5QmU0D-9EemACYDE-qKd5g" name="Player2MoveInvalid"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_GkXtcj-9EemACYDE-qKd5g" client="_GkELcD-9EemACYDE-qKd5g" supplier="_GkXtcD-9EemACYDE-qKd5g"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_GkXtcz-9EemACYDE-qKd5g" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Gkg3YD-9EemACYDE-qKd5g" name="move_validIO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Gkg3Yz-9EemACYDE-qKd5g" client="_GkELcD-9EemACYDE-qKd5g" supplier="_Gkg3YD-9EemACYDE-qKd5g"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_4CcfoD-9EemACYDE-qKd5g" operation="_4Bju0D-9EemACYDE-qKd5g"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_5Q1lYD-9EemACYDE-qKd5g" operation="_5QmU0D-9EemACYDE-qKd5g"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_67-RgD-9EemACYDE-qKd5g" operation="_67GHwD-9EemACYDE-qKd5g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_YQLfEEBFEemqJPrZwKkwWQ" name="board_update">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_YQBuEEBFEemqJPrZwKkwWQ" name="board_update">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YQUpAUBFEemqJPrZwKkwWQ" client="_YQBuEEBFEemqJPrZwKkwWQ" supplier="_YQLfEkBFEemqJPrZwKkwWQ" contract="_YQLfEkBFEemqJPrZwKkwWQ"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YQeaBEBFEemqJPrZwKkwWQ" client="_YQBuEEBFEemqJPrZwKkwWQ" supplier="_YQeaAkBFEemqJPrZwKkwWQ" contract="_YQeaAkBFEemqJPrZwKkwWQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YQLfEkBFEemqJPrZwKkwWQ" name="board_update">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_YW58sEBGEemqJPrZwKkwWQ" name="Player1MoveMessage">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_6CnDgEBgEemqJPrZwKkwWQ" name="Player1Move">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YQUpAkBFEemqJPrZwKkwWQ" name="board_update~">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Ah8dQEBHEemqJPrZwKkwWQ" name="BoardUpdated"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_YQeaAEBFEemqJPrZwKkwWQ" client="_YQBuEEBFEemqJPrZwKkwWQ" supplier="_YQUpAkBFEemqJPrZwKkwWQ"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_YQeaAUBFEemqJPrZwKkwWQ" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YQeaAkBFEemqJPrZwKkwWQ" name="board_updateIO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_YQeaBUBFEemqJPrZwKkwWQ" client="_YQBuEEBFEemqJPrZwKkwWQ" supplier="_YQeaAkBFEemqJPrZwKkwWQ"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_YXDGoEBGEemqJPrZwKkwWQ" operation="_YW58sEBGEemqJPrZwKkwWQ"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_AiFnMEBHEemqJPrZwKkwWQ" operation="_Ah8dQEBHEemqJPrZwKkwWQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_sXO60zuNEemh7Jv-t4KSvQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sXO61DuNEemh7Jv-t4KSvQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -152,4 +450,32 @@ mqtt.subscribe(&quot;Player1MoveDone&quot;);</body>
   <UMLRealTime:RTPort xmi:id="_xpawsDuOEemh7Jv-t4KSvQ" isPublish="false" isWired="false" base_Port="_xpUqEDuOEemh7Jv-t4KSvQ"/>
   <UMLRTStateMachines:RTState xmi:id="_-0oNwDuOEemh7Jv-t4KSvQ" base_State="_-0j8UDuOEemh7Jv-t4KSvQ"/>
   <UMLRTStateMachines:RTState xmi:id="_Ly5RoDuoEemh7Jv-t4KSvQ" base_State="_Ly0ZIDuoEemh7Jv-t4KSvQ"/>
+  <UMLRealTime:Capsule xmi:id="_-xWdED-8EemACYDE-qKd5g" base_Class="_-w7mUD-8EemACYDE-qKd5g"/>
+  <UMLRealTime:CapsulePart xmi:id="___S24D-8EemACYDE-qKd5g" base_Property="__-_78D-8EemACYDE-qKd5g"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_GkMHQD-9EemACYDE-qKd5g" base_Package="_GkIc4D-9EemACYDE-qKd5g"/>
+  <UMLRealTime:RTMessageSet xmi:id="_GkQYsD-9EemACYDE-qKd5g" base_Interface="_GkN8cD-9EemACYDE-qKd5g"/>
+  <UMLRealTime:RTMessageSet xmi:id="_GkXtcT-9EemACYDE-qKd5g" base_Interface="_GkXtcD-9EemACYDE-qKd5g" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_Gkg3YT-9EemACYDE-qKd5g" base_Interface="_Gkg3YD-9EemACYDE-qKd5g" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_GkozMD-9EemACYDE-qKd5g" base_Collaboration="_GkELcD-9EemACYDE-qKd5g"/>
+  <UMLRealTime:RTPort xmi:id="_LTS6sD-9EemACYDE-qKd5g" isPublish="false" isWired="true" base_Port="_LTNbID-9EemACYDE-qKd5g"/>
+  <UMLRealTime:RTPort xmi:id="_N_pMMD-9EemACYDE-qKd5g" isPublish="false" isWired="true" base_Port="_N_kTsD-9EemACYDE-qKd5g"/>
+  <UMLRealTime:RTConnector xmi:id="_k8pTcD-9EemACYDE-qKd5g" base_Connector="_k8Y0wD-9EemACYDE-qKd5g"/>
+  <UMLRTStateMachines:RTPseudostate xmi:id="_uO16wD_BEemACYDE-qKd5g" base_Pseudostate="_uOvNED_BEemACYDE-qKd5g"/>
+  <UMLRTStateMachines:RTState xmi:id="_uO8BYD_BEemACYDE-qKd5g" base_State="_uO5lID_BEemACYDE-qKd5g"/>
+  <UMLRTStateMachines:RTRegion xmi:id="_uO92kD_BEemACYDE-qKd5g" base_Region="_uOqUkD_BEemACYDE-qKd5g"/>
+  <UMLRTStateMachines:RTStateMachine xmi:id="_uPJcwD_BEemACYDE-qKd5g" base_StateMachine="_uOYAsD_BEemACYDE-qKd5g"/>
+  <UMLRealTime:RTPort xmi:id="_yXaSoD_BEemACYDE-qKd5g" isPublish="false" isWired="false" base_Port="_yXWBMD_BEemACYDE-qKd5g"/>
+  <UMLRTStateMachines:RTState xmi:id="_RYchwD_CEemACYDE-qKd5g" base_State="_RYXCMD_CEemACYDE-qKd5g"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_yENtAD_FEemACYDE-qKd5g" headerPreface="" implementationPreface="#include&lt;iostream>&#xD;&#xA;#include&lt;cstdlib>&#xD;&#xA;#include &lt;string>" base_Class="_-w7mUD-8EemACYDE-qKd5g" privateDeclarations="int ChessBoard[8][8] = {&#xD;&#xA;    {-2, -3, -4, -5, -6, -4, -3, -2},&#xD;&#xA;    {-1, -1, -1, -1, -1, -1, -1, -1},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {1, 1,1,1,1,1,1,1},&#xD;&#xA;    {2, 3, 4, 5, 6, 4, 3, 2}, };"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_MAUpsD_GEemACYDE-qKd5g" implementationPreface="#include&lt;iostream>&#xD;&#xA;#include&lt;cstdlib>&#xD;&#xA;#include &lt;string>" base_Class="_xmnJwDuNEemh7Jv-t4KSvQ"/>
+  <UMLRTStateMachines:RTPseudostate xmi:id="_o0cYEEBEEemqJPrZwKkwWQ" base_Pseudostate="_o0TOIEBEEemqJPrZwKkwWQ"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_YQLfEUBFEemqJPrZwKkwWQ" base_Package="_YQLfEEBFEemqJPrZwKkwWQ"/>
+  <UMLRealTime:RTMessageSet xmi:id="_YQUpAEBFEemqJPrZwKkwWQ" base_Interface="_YQLfEkBFEemqJPrZwKkwWQ"/>
+  <UMLRealTime:RTMessageSet xmi:id="_YQUpA0BFEemqJPrZwKkwWQ" base_Interface="_YQUpAkBFEemqJPrZwKkwWQ" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_YQeaA0BFEemqJPrZwKkwWQ" base_Interface="_YQeaAkBFEemqJPrZwKkwWQ" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_YQeaBkBFEemqJPrZwKkwWQ" base_Collaboration="_YQBuEEBFEemqJPrZwKkwWQ"/>
+  <UMLRealTime:RTPort xmi:id="_bNPGEEBFEemqJPrZwKkwWQ" isPublish="false" isWired="true" base_Port="_bNFVEEBFEemqJPrZwKkwWQ"/>
+  <UMLRealTime:RTPort xmi:id="_dMdL0UBFEemqJPrZwKkwWQ" isPublish="false" isWired="true" base_Port="_dMdL0EBFEemqJPrZwKkwWQ"/>
+  <UMLRealTime:RTConnector xmi:id="_mIq440BFEemqJPrZwKkwWQ" base_Connector="_mIq44EBFEemqJPrZwKkwWQ"/>
+  <UMLRTStateMachines:RTState xmi:id="_nlzv0UBGEemqJPrZwKkwWQ" base_State="_nlzv0EBGEemqJPrZwKkwWQ"/>
 </xmi:XMI>
