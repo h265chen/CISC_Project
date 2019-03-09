@@ -1,29 +1,42 @@
 import java.awt.Component;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 class Game {
 	private JButton add = new JButton("Add");
+	private JButton connectMqtt = new JButton("Connect to Server");
 	private JButton printBoard = new JButton("Print Board");
     final String dir = System.getProperty("user.dir");
 	private ChessBoard cb = new ChessBoard();
-	public Piece p_array [][];
-  	JLabel piece_label;
-
+	private Piece p_array [][];
+  	private JLabel piece_label;
+	private MQTT_Interface mq_i;
+	private Timer t;
 	public Game() {
+		pollingMessageQueue();
+		connectToMqtt();
 		initializeBoard();
 		setButtons();
 		setPieces();
+		createSubscribeEventListener();
 		createAddEventListener();
 		createDeleteEventListener();
+		createOnCloseEventListener();
 		startGame();
+	}
+	private void connectToMqtt() {
+  	  mq_i = new MQTT_Interface();
+  	  t.start();
 	}
 	private void initializeBoard() {
 		p_array = new Piece[8][8];
@@ -118,7 +131,7 @@ class Game {
 		board_square = cb.squares[4][0];
 		board_square.add(piece1.get_label("king_p2"));
 	}
-	private void move_piece(int startRow,int startCol,int endRow, int endCol) {
+	private void move_piece(int startCol,int startRow,int endCol, int endRow) {
 		Piece start_p = p_array[startCol][startRow];
 		Piece end_p = p_array[endCol][endRow];
 		String piece_type = start_p.get_piece_type();
@@ -153,6 +166,18 @@ class Game {
 	      }
 	    });
 	}
+	private void createSubscribeEventListener() {
+	    connectMqtt.addActionListener(new ActionListener()
+	    {
+	      public void actionPerformed(ActionEvent e)
+	      {
+	    	  //Create MQTT object and connect
+	    	  mq_i.subscribeToTopic("Player1MoveDone");
+
+	      }
+	    });
+		
+	}
 	private void createDeleteEventListener() {
 	    printBoard.addActionListener(new ActionListener()
 	    {
@@ -168,9 +193,42 @@ class Game {
 	    });
 		
 	}
+	private void createOnCloseEventListener() {
+		  cb.addWindowListener(new WindowAdapter()
+	        {
+	            @Override
+	            public void windowClosing(WindowEvent e)
+	            {
+	            	//Disconnect from MQTT intance
+	            	mq_i.disconnect();
+	                System.out.println("Game closed");
+	                e.getWindow().dispose();
+	                t.stop();
+	            }
+	        });
+		
+	}
+	private void pollingMessageQueue() {
+		
+		t = new Timer(1000, new ActionListener() {
+	            public void actionPerformed(ActionEvent evt) {
+	            	String messageBuffer = mq_i.getMessage();
+	                if (messageBuffer != null) {
+			            System.out.println(messageBuffer);
+			            int ch1 = Character.getNumericValue(messageBuffer.charAt(0));
+			            int ch2 = Character.getNumericValue(messageBuffer.charAt(1));
+			            int ch3 = Character.getNumericValue(messageBuffer.charAt(2));
+			            int ch4 = Character.getNumericValue(messageBuffer.charAt(3));
+			            move_piece(ch1,ch2,ch3,ch4);
+			            mq_i.resetMessage();
+	                } 
+	            }
+	        });
+	}
 	private void setButtons() {
 		cb.tools.add(add);
 		cb.tools.add(printBoard);
+		cb.tools.add(connectMqtt);
 	}
 	private void startGame() {
         Runnable r = new Runnable() {
