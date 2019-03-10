@@ -49,10 +49,10 @@ public class Connector {
 				String coordinates = "";
 				switch (topic){
 					case MqttManager.Player1Connected:
-						mGame.setPlayerStatus(0, "Player1 is Ready to Play");
+						mGame.setPlayerStatus(0, "Ready to Play");
 						break;
 					case MqttManager.Player2Connected:
-						mGame.setPlayerStatus(1, "Player2 is Ready to Play");
+						mGame.setPlayerStatus(1, "Ready to Play");
 						break;
 					case MqttManager.Player1MoveDone:
 						mGame.setPlayerStatus(1, "It is Your Turn");

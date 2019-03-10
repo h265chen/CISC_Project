@@ -32,7 +32,7 @@ class ChessView extends JFrame{
     JLabel playerA = new JLabel("PlayerA");
     JLabel playerB = new JLabel("PlayerB");
     
-    public JLabel playerARst = new JLabel("Wait to check inssssssssss");
+    public JLabel playerARst = new JLabel("Wait to check in");
     public JLabel playerBRst = new JLabel("Wait to check in");
     
     JLabel hint = new JLabel("");

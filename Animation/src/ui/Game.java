@@ -215,10 +215,10 @@ public class Game {
 	
 	public void setPlayerStatus(int player, String status) {
 		if(player == 0) {
-			cb.playerARst.setText(status);
+			cb.playerARst.setText("<html>"+ status +"</html>");
 			cb.playerARst.setForeground(Color.BLUE);
 		} else {
-			cb.playerBRst.setText(status);
+			cb.playerBRst.setText("<html>"+ status +"</html>");
 			cb.playerARst.setForeground(Color.BLUE);
 		}
 
