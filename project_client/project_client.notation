@@ -380,7 +380,7 @@
   <notation:Diagram xmi:id="_F5qzQDuOEemh7Jv-t4KSvQ" type="PapyrusUMLStateMachineDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_F5qzQTuOEemh7Jv-t4KSvQ" type="StateMachine_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_F5qzQjuOEemh7Jv-t4KSvQ" type="StateMachine_NameLabel">
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzQzuOEemh7Jv-t4KSvQ" width="767" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzQzuOEemh7Jv-t4KSvQ" width="883" height="20"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_F5qzRDuOEemh7Jv-t4KSvQ" type="StateMachine_RegionCompartment">
         <children xmi:type="notation:Shape" xmi:id="_F5qzRTuOEemh7Jv-t4KSvQ" type="Region_Shape">
@@ -479,7 +479,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-1GH0zuOEemh7Jv-t4KSvQ"/>
               </children>
               <element xmi:type="uml:State" href="project_client.uml#_-0j8UDuOEemh7Jv-t4KSvQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-1FgwTuOEemh7Jv-t4KSvQ" x="342" y="20" width="52" height="43"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-1FgwTuOEemh7Jv-t4KSvQ" x="247" y="10" width="52" height="43"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_LzkAADuoEemh7Jv-t4KSvQ" type="State_Shape">
               <children xmi:type="notation:DecorationNode" xmi:id="_LzkAAjuoEemh7Jv-t4KSvQ" type="State_NameLabel">
@@ -524,12 +524,12 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzSTuOEemh7Jv-t4KSvQ"/>
           </children>
           <element xmi:type="uml:Region" href="project_client.uml#_F5WqMDuOEemh7Jv-t4KSvQ"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzSjuOEemh7Jv-t4KSvQ" width="767" height="324"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzSjuOEemh7Jv-t4KSvQ" width="883" height="408"/>
         </children>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzSzuOEemh7Jv-t4KSvQ" y="20" width="767" height="324"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzSzuOEemh7Jv-t4KSvQ" y="20" width="883" height="408"/>
       </children>
       <element xmi:type="uml:StateMachine" href="project_client.uml#_F5Kc8DuOEemh7Jv-t4KSvQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzTDuOEemh7Jv-t4KSvQ" x="30" y="30" width="767" height="344"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F5qzTDuOEemh7Jv-t4KSvQ" x="30" y="30" width="883" height="428"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_F5qzTTuOEemh7Jv-t4KSvQ" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_F5qzTjuOEemh7Jv-t4KSvQ"/>

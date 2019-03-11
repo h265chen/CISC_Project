@@ -206,16 +206,13 @@ move_valid.Player2Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
 char * startMove = strdup(start);&#xD;
 char * endMove = strdup(end);&#xD;
 &#xD;
-startRow = startMove[1] - '0';&#xD;
-endRow = endMove[1] - '0';&#xD;
-&#xD;
-startRow = 8 - startRow;&#xD;
-endRow = 8 - endRow;&#xD;
+startRow = (startMove[1] - '0') - 1;&#xD;
+endRow = (endMove[1] - '0') - 1;&#xD;
 &#xD;
 startCol = GetColIndex(startMove);&#xD;
 endCol = GetColIndex(endMove);&#xD;
 &#xD;
-P2MoveValid = true;</body>
+P2MoveValid = validateMove(startCol, startRow, endCol, endRow);</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_0qlfoEBEEemqJPrZwKkwWQ" event="_67-RgD-9EemACYDE-qKd5g" port="_N_kTsD-9EemACYDE-qKd5g"/>
           </transition>
@@ -319,6 +316,136 @@ return startcol;</body>
  }&#xD;
 </body>
       </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_y0jMYEO4Eem3r6TfPP7Ezw" specification="_L_lG4EO4Eem3r6TfPP7Ezw">
+        <language>C++</language>
+        <body>bool moveValid = false;&#xD;
+if(ChessBoard[startRow][startCol] == 0){&#xD;
+	log.log(&quot;Player selected empty as start&quot;);&#xD;
+	return moveValid;&#xD;
+}&#xD;
+if(ChessBoard[startRow][startCol] &lt; 0){&#xD;
+	log.log(&quot;Player another players piece&quot;);&#xD;
+	return moveValid;&#xD;
+}&#xD;
+//Player selected a pawn&#xD;
+if(ChessBoard[startRow][startCol] == 1){&#xD;
+	log.log(&quot;Player 1 selected a pawn&quot;);&#xD;
+	//Moving one step into an empty space&#xD;
+	if(startCol == endCol &amp;&amp; startRow - endRow ==1 &amp;&amp; ChessBoard[endRow][endCol] == 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Capturing a piece on right diagonal&#xD;
+	if(abs(endCol - startCol) == 1 &amp;&amp; startRow - endRow== 1 &amp;&amp; ChessBoard[endRow][endCol] &lt; 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	return moveValid = false;&#xD;
+}&#xD;
+&#xD;
+//Player selected a rook&#xD;
+if(ChessBoard[startRow][startCol] == 2){&#xD;
+	log.log(&quot;Player 1 selected a rook&quot;);&#xD;
+	//Moving into an empty cell in the same column&#xD;
+	if(startCol == endCol &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Moving into an empty cell in the same row&#xD;
+	if(startRow == endRow &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	return moveValid;&#xD;
+}&#xD;
+//Player selected a knight&#xD;
+if(ChessBoard[startRow][startCol] == 3){&#xD;
+	log.log(&quot;Player 1 selected a knight&quot;);&#xD;
+	//Knight moving in Upper left L&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == 2 &amp;&amp; startCol - endCol == 1)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+&#xD;
+	//Knight moving in Upper right L&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow- endRow == 2 &amp;&amp; endCol - startCol == 1)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Knight moving in Bottom left L&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow- startRow == 2 &amp;&amp; startCol - endCol == 1)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Knight moving in Bottom right L&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == 2 &amp;&amp; endCol - startCol == 1)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; abs(endRow - startRow) == 1 &amp;&amp; abs(endCol - startCol) == 2){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	return moveValid;&#xD;
+}&#xD;
+//Player selected a bishop&#xD;
+if(ChessBoard[startRow][startCol] == 4){&#xD;
+	log.log(&quot;Player 1 selected a bishop&quot;);&#xD;
+	//Bishop moving in Upper Left diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == startCol - endCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Bishop moving on Upper right diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == endCol - startCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Bishop moving on Bottom left diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == startCol - endCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Bishop moving on Bottom right diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == endCol - startCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	return moveValid;&#xD;
+}&#xD;
+//Player selected the Queen&#xD;
+if(ChessBoard[startRow][startCol] == 5){&#xD;
+	log.log(&quot;Player 1 selected Queen&quot;);&#xD;
+	if(startCol == endCol &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	if(startRow == endRow &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Queen moving in Upper Left diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == startCol - endCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Queen moving on Upper right diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == endCol - startCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Queen moving on Bottom left diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == startCol - endCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Queen moving on Bottom right diagonal&#xD;
+	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == endCol - startCol)){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	return moveValid;&#xD;
+}&#xD;
+//Player selected the King&#xD;
+if(ChessBoard[startRow][startCol] == 6){&#xD;
+	log.log(&quot;Player 1 selected the King&quot;);&#xD;
+	//Moving one step in the same column&#xD;
+	if(startCol == endCol &amp;&amp; abs(startRow - endRow) ==1 &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Moving one step in the same row&#xD;
+	if(startRow == endRow &amp;&amp; abs(startCol - endCol) ==1 &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	//Moving one step along any diagonal&#xD;
+	if(abs(startCol - endCol) == 1 &amp;&amp; abs(startRow - endRow) == 1 &amp;&amp; ChessBoard[endRow][endCol] &lt;=0){&#xD;
+		return moveValid = true;&#xD;
+	}&#xD;
+	return moveValid;&#xD;
+}&#xD;
+ </body>
+      </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_vFd-UEBREemqJPrZwKkwWQ" name="GetColIndex" concurrency="guarded" method="_JZnAgEBSEemqJPrZwKkwWQ">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_2CZUMEBREemqJPrZwKkwWQ" name="col">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -342,6 +469,23 @@ return startcol;</body>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Bp-8MEBvEemqJPrZwKkwWQ" name="printBoard" concurrency="guarded" method="_NV8NAEBvEemqJPrZwKkwWQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_L_lG4EO4Eem3r6TfPP7Ezw" name="validateMove" concurrency="guarded" method="_y0jMYEO4Eem3r6TfPP7Ezw">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_TLFEQEO4Eem3r6TfPP7Ezw" name="startCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WATk8EO4Eem3r6TfPP7Ezw" name="startRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_YCrsYEO4Eem3r6TfPP7Ezw" name="endCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZghjYEO4Eem3r6TfPP7Ezw" name="endRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_b3UboEO4Eem3r6TfPP7Ezw" name="moveValid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_GkIc4D-9EemACYDE-qKd5g" name="move_valid">
       <packagedElement xmi:type="uml:Collaboration" xmi:id="_GkELcD-9EemACYDE-qKd5g" name="move_valid">
