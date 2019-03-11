@@ -1056,7 +1056,7 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YCKKADuLEemdYIOBm08Mew" id="(1.0,0.4067796610169492)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YCKKATuLEemdYIOBm08Mew" id="(0.0,0.4418604651162791)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_kVCQ4DuLEemdYIOBm08Mew" type="Transition_Edge" source="_Wdy0QDuLEemdYIOBm08Mew" target="_sdX0gDuMEemdYIOBm08Mew">
+    <edges xmi:type="notation:Connector" xmi:id="_kVCQ4DuLEemdYIOBm08Mew" type="Transition_Edge" source="_Wdy0QDuLEemdYIOBm08Mew" target="_i1GIIDuLEemdYIOBm08Mew">
       <children xmi:type="notation:DecorationNode" xmi:id="_kVC38juLEemdYIOBm08Mew" type="Transition_NameLabel">
         <styles xmi:type="notation:BooleanValueStyle" xmi:id="_kje8kDuLEemdYIOBm08Mew" name="IS_UPDATED_POSITION" booleanValue="true"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_kVC38zuLEemdYIOBm08Mew" x="-7" y="14"/>
@@ -1073,7 +1073,7 @@
       <element xmi:type="uml:Transition" href="cisc836project.uml#_kU3RwDuLEemdYIOBm08Mew"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kVC38TuLEemdYIOBm08Mew" points="[441, 158, -643984, -643984]$[541, 162, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kVj1UDuLEemdYIOBm08Mew" id="(1.0,0.4186046511627907)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kVj1UTuLEemdYIOBm08Mew" id="(0.0,0.25)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kVj1UTuLEemdYIOBm08Mew" id="(0.0,0.627906976744186)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_0Q3bcDuLEemdYIOBm08Mew" type="Transition_Edge" source="_Wdy0QDuLEemdYIOBm08Mew" target="_xvKTsDuLEemdYIOBm08Mew">
       <children xmi:type="notation:DecorationNode" xmi:id="_0Q3bczuLEemdYIOBm08Mew" type="Transition_NameLabel">
