@@ -265,21 +265,45 @@ printBoard();</body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JZnAgEBSEemqJPrZwKkwWQ" specification="_vFd-UEBREemqJPrZwKkwWQ">
         <language>C++</language>
-        <body>    using namespace std;&#xD;
-    char charcol1 = col[0];&#xD;
-    int col_index;&#xD;
-    switch(charcol1){&#xD;
-    case 'A': col_index = 0; break;&#xD;
-    case 'B': col_index = 1; break;&#xD;
-    case 'C': col_index = 2; break;&#xD;
-    case 'D': col_index = 3; break;&#xD;
-    case 'E': col_index = 4; break;&#xD;
-    case 'F': col_index = 5; break;&#xD;
-    case 'G': col_index = 6; break;&#xD;
-    case 'H': col_index = 7; break;&#xD;
-    }&#xD;
+        <body>using namespace std;&#xD;
+char charcol1 = col[0];&#xD;
+int startcol;&#xD;
+switch(charcol1){&#xD;
+	case 'A':&#xD;
+	case 'a':&#xD;
+		startcol = 0; &#xD;
+		break;&#xD;
+    	case 'B':&#xD;
+	case 'b': &#xD;
+		startcol = 1; &#xD;
+		break;&#xD;
+    	case 'C':&#xD;
+	case 'c': &#xD;
+		startcol = 2; &#xD;
+		break;&#xD;
+    	case 'D':&#xD;
+	case 'd':  &#xD;
+		startcol = 3; &#xD;
+		break;&#xD;
+    	case 'E': &#xD;
+	case 'e': &#xD;
+		startcol = 4; &#xD;
+		break;&#xD;
+    	case 'F': &#xD;
+	case 'f': &#xD;
+		startcol = 5; &#xD;
+		break;&#xD;
+    	case 'G': &#xD;
+	case 'g': &#xD;
+		startcol = 6; &#xD;
+		break;&#xD;
+    	case 'H': &#xD;
+	case 'h': &#xD;
+		startcol = 7; &#xD;
+		break;&#xD;
+}&#xD;
 &#xD;
-return col_index;&#xD;
+return startcol;&#xD;
 </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Q-FekEBSEemqJPrZwKkwWQ">
