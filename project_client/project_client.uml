@@ -127,7 +127,7 @@ mqtt.subscribe(&quot;Player1MoveDone&quot;);</body>
           <subvertex xmi:type="uml:State" xmi:id="_geIwcDuOEemh7Jv-t4KSvQ" name="game started">
             <entry xmi:type="uml:OpaqueBehavior" xmi:id="_5vC0ADuOEemh7Jv-t4KSvQ" name="Entry" isReentrant="false">
               <language>C++</language>
-              <body>mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Ting&quot;,  &quot;queens&quot;);</body>
+              <body>mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Hoyman&quot;,  &quot;queens&quot;);</body>
             </entry>
           </subvertex>
           <subvertex xmi:type="uml:State" xmi:id="_tnaT0DuOEemh7Jv-t4KSvQ" name="Player1Turn"/>
@@ -324,7 +324,11 @@ if(ChessBoard[startRow][startCol] == 0){&#xD;
 	return moveValid;&#xD;
 }&#xD;
 if(ChessBoard[startRow][startCol] &lt; 0){&#xD;
-	log.log(&quot;Player another players piece&quot;);&#xD;
+	log.log(&quot;You selected another Playrs piece&quot;);&#xD;
+	return moveValid;&#xD;
+}&#xD;
+if(ChessBoard[endRow][endCol] > 0){&#xD;
+	log.log(&quot;One of your pieces is occupying that spot&quot;);&#xD;
 	return moveValid;&#xD;
 }&#xD;
 //Player selected a pawn&#xD;
@@ -358,23 +362,10 @@ if(ChessBoard[startRow][startCol] == 2){&#xD;
 if(ChessBoard[startRow][startCol] == 3){&#xD;
 	log.log(&quot;Player 1 selected a knight&quot;);&#xD;
 	//Knight moving in Upper left L&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == 2 &amp;&amp; startCol - endCol == 1)){&#xD;
+	if(abs(endRow - startRow) == 2 &amp;&amp; abs(startCol - endCol) == 1){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
-&#xD;
-	//Knight moving in Upper right L&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow- endRow == 2 &amp;&amp; endCol - startCol == 1)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Knight moving in Bottom left L&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow- startRow == 2 &amp;&amp; startCol - endCol == 1)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Knight moving in Bottom right L&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == 2 &amp;&amp; endCol - startCol == 1)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; abs(endRow - startRow) == 1 &amp;&amp; abs(endCol - startCol) == 2){&#xD;
+	if(abs(endRow - startRow) == 1 &amp;&amp; abs(endCol - startCol) == 2){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	return moveValid;&#xD;
@@ -383,19 +374,19 @@ if(ChessBoard[startRow][startCol] == 3){&#xD;
 if(ChessBoard[startRow][startCol] == 4){&#xD;
 	log.log(&quot;Player 1 selected a bishop&quot;);&#xD;
 	//Bishop moving in Upper Left diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == startCol - endCol)){&#xD;
+	if((startRow - endRow == startCol - endCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Bishop moving on Upper right diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == endCol - startCol)){&#xD;
+	if( (startRow - endRow == endCol - startCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Bishop moving on Bottom left diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == startCol - endCol)){&#xD;
+	if((endRow - startRow == startCol - endCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Bishop moving on Bottom right diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == endCol - startCol)){&#xD;
+	if((endRow - startRow == endCol - startCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	return moveValid;&#xD;
@@ -403,26 +394,26 @@ if(ChessBoard[startRow][startCol] == 4){&#xD;
 //Player selected the Queen&#xD;
 if(ChessBoard[startRow][startCol] == 5){&#xD;
 	log.log(&quot;Player 1 selected Queen&quot;);&#xD;
-	if(startCol == endCol &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+	if(startCol == endCol){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
-	if(startRow == endRow &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+	if(startRow == endRow){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Queen moving in Upper Left diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == startCol - endCol)){&#xD;
+	if( (startRow - endRow == startCol - endCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Queen moving on Upper right diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (startRow - endRow == endCol - startCol)){&#xD;
+	if( (startRow - endRow == endCol - startCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Queen moving on Bottom left diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == startCol - endCol)){&#xD;
+	if( (endRow - startRow == startCol - endCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Queen moving on Bottom right diagonal&#xD;
-	if(ChessBoard[endRow][endCol] &lt;= 0 &amp;&amp; (endRow - startRow == endCol - startCol)){&#xD;
+	if( (endRow - startRow == endCol - startCol)){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	return moveValid;&#xD;
@@ -431,15 +422,15 @@ if(ChessBoard[startRow][startCol] == 5){&#xD;
 if(ChessBoard[startRow][startCol] == 6){&#xD;
 	log.log(&quot;Player 1 selected the King&quot;);&#xD;
 	//Moving one step in the same column&#xD;
-	if(startCol == endCol &amp;&amp; abs(startRow - endRow) ==1 &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+	if(startCol == endCol &amp;&amp; abs(startRow - endRow) ==1){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Moving one step in the same row&#xD;
-	if(startRow == endRow &amp;&amp; abs(startCol - endCol) ==1 &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+	if(startRow == endRow &amp;&amp; abs(startCol - endCol) ==1){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Moving one step along any diagonal&#xD;
-	if(abs(startCol - endCol) == 1 &amp;&amp; abs(startRow - endRow) == 1 &amp;&amp; ChessBoard[endRow][endCol] &lt;=0){&#xD;
+	if(abs(startCol - endCol) == 1 &amp;&amp; abs(startRow - endRow) == 1 ){&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	return moveValid;&#xD;
@@ -482,7 +473,7 @@ if(ChessBoard[startRow][startCol] == 6){&#xD;
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZghjYEO4Eem3r6TfPP7Ezw" name="endRow">
           <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_b3UboEO4Eem3r6TfPP7Ezw" name="moveValid">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_b3UboEO4Eem3r6TfPP7Ezw" name="moveValid" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
