@@ -210,13 +210,17 @@ return startcol;&#xD;
         <language>C++</language>
         <body>    bool moveValid = false;&#xD;
     if(ChessBoard[startRow][startCol] == 0){&#xD;
-    log.log(&quot;Player selected empty as start&quot;);&#xD;
+    log.log(&quot;[Board]Player selected empty as start&quot;);&#xD;
     return moveValid;&#xD;
     }&#xD;
     if(ChessBoard[startRow][startCol] > 0){&#xD;
-    log.log(&quot;Player another players piece&quot;);&#xD;
+    log.log(&quot;[Board]Player another players piece&quot;);&#xD;
     return moveValid;&#xD;
     }&#xD;
+	if(ChessBoard[endRow][endCol] &lt; 0 ){&#xD;
+		log.log(&quot;[Board]End move occupied by one of your pieces&quot;);&#xD;
+		return moveValid;&#xD;
+	}&#xD;
     //Player selected a pawn&#xD;
     if(ChessBoard[startRow][startCol] == -1){&#xD;
     log.log(&quot;Player 1 selected a pawn&quot;);&#xD;
@@ -239,7 +243,11 @@ return startcol;&#xD;
     log.log(&quot;Player 1 selected a rook&quot;);&#xD;
     //Moving into an empty cell in the same column&#xD;
     if(startCol == endCol){&#xD;
-    return moveValid = true;&#xD;
+	if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+		log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+		return moveValid = false;&#xD;
+	}&#xD;
+	return moveValid = true;&#xD;
     }&#xD;
     //Moving into an empty cell in the same row&#xD;
     if(startRow == endRow){&#xD;
@@ -361,9 +369,41 @@ for(int i = 0; i &lt; 8 ; i++){&#xD;
     ChessBoard[startRow][startCol] = 0;&#xD;
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_FxUywD4DEempSqBHy1qydg" specification="_NJYiQD3_EempSqBHy1qydg">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_FxUywD4DEempSqBHy1qydg">
         <language>C++</language>
-        <body></body>
+        <body>    int rows_dist = abs(startRow - endRow);&#xD;
+    int col_dist = abs(startCol - endCol);&#xD;
+    //Player selected a rook, check if there is a piece in the way&#xD;
+    if(piece == -2){&#xD;
+    //Moving in downwards column&#xD;
+    if(startRow &lt; endRow){&#xD;
+    for(int i = 0; i &lt; rows_dist ; i++){&#xD;
+    if(ChessBoard[startRow+i][startCol] &lt; 0 ){&#xD;
+    return true;&#xD;
+    }&#xD;
+    }&#xD;
+    }&#xD;
+ &#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4mHucEThEem-IuJ85sRorA" specification="_mzCHUEThEem-IuJ85sRorA">
+        <language>C++</language>
+        <body>    int rows_dist = abs(startRow - endRow);&#xD;
+    int col_dist = abs(startCol - endCol);&#xD;
+    if(piece == -2){&#xD;
+    	if(startRow &lt; endRow){&#xD;
+		log.log(&quot;Checking piece in the way&quot;);&#xD;
+    		for(int i = startRow + 1; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow+i][startCol]);&#xD;
+    			if(ChessBoard[startRow+i][startCol] &lt; 0 ){&#xD;
+    				return true;&#xD;
+    				}&#xD;
+    			}&#xD;
+		return false;&#xD;
+    		}&#xD;
+	}&#xD;
+ &#xD;
+</body>
       </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_MhQL4DF1Eem4RqP6_nGyvA" name="GetCol" concurrency="guarded" method="_WkIlEDGAEem4RqP6_nGyvA">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qFNwUDGGEem6scIjjy_ZLA" name="Start">
@@ -405,7 +445,26 @@ for(int i = 0; i &lt; 8 ; i++){&#xD;
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_VUydwDycEemdYIOBm08Mew" name="printBoard" concurrency="guarded" method="_V5BhUDyeEemdYIOBm08Mew"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_NJYiQD3_EempSqBHy1qydg" name="pieceInWay" concurrency="guarded" method="_FxUywD4DEempSqBHy1qydg"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_mzCHUEThEem-IuJ85sRorA" name="PieceOnWay" concurrency="guarded" method="_4mHucEThEem-IuJ85sRorA">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qWY5UEThEem-IuJ85sRorA" name="startCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_r6uZ4EThEem-IuJ85sRorA" name="startRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ttpJAEThEem-IuJ85sRorA" name="endCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_vacCAEThEem-IuJ85sRorA" name="endRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_w_xBEEThEem-IuJ85sRorA" name="piece">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2L8yEEThEem-IuJ85sRorA" name="blocked" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_vvzL4DCGEemPZPXVYM39kg" name="BoardUpdate">
       <packagedElement xmi:type="uml:Collaboration" xmi:id="_vvu6cDCGEemPZPXVYM39kg" name="BoardUpdate">
