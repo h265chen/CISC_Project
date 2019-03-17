@@ -374,10 +374,16 @@ if(ChessBoard[startRow][startCol] == 2){&#xD;
 	log.log(&quot;Player 1 selected a rook&quot;);&#xD;
 	//Moving into an empty cell in the same column&#xD;
 	if(startCol == endCol &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+			return moveValid = false;&#xD;
+		}&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	//Moving into an empty cell in the same row&#xD;
 	if(startRow == endRow &amp;&amp; ChessBoard[endRow][endCol] &lt;= 0){&#xD;
+		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+			return moveValid = false;&#xD;
+		}&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	return moveValid;&#xD;
@@ -398,49 +404,40 @@ if(ChessBoard[startRow][startCol] == 3){&#xD;
 if(ChessBoard[startRow][startCol] == 4){&#xD;
 	log.log(&quot;Player 1 selected a bishop&quot;);&#xD;
 	//Bishop moving in Upper Left diagonal&#xD;
-	if((startRow - endRow == startCol - endCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Bishop moving on Upper right diagonal&#xD;
-	if( (startRow - endRow == endCol - startCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Bishop moving on Bottom left diagonal&#xD;
-	if((endRow - startRow == startCol - endCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Bishop moving on Bottom right diagonal&#xD;
-	if((endRow - startRow == endCol - startCol)){&#xD;
+	if((abs(startRow - endRow) == abs(startCol - endCol))){&#xD;
+		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+			return moveValid = false;&#xD;
+		}&#xD;
 		return moveValid = true;&#xD;
 	}&#xD;
 	return moveValid;&#xD;
 }&#xD;
 //Player selected the Queen&#xD;
 if(ChessBoard[startRow][startCol] == 5){&#xD;
-	log.log(&quot;Player 1 selected Queen&quot;);&#xD;
-	if(startCol == endCol){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	if(startRow == endRow){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Queen moving in Upper Left diagonal&#xD;
-	if( (startRow - endRow == startCol - endCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Queen moving on Upper right diagonal&#xD;
-	if( (startRow - endRow == endCol - startCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Queen moving on Bottom left diagonal&#xD;
-	if( (endRow - startRow == startCol - endCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	//Queen moving on Bottom right diagonal&#xD;
-	if( (endRow - startRow == endCol - startCol)){&#xD;
-		return moveValid = true;&#xD;
-	}&#xD;
-	return moveValid;&#xD;
+    	log.log(&quot;Player 2 selected Queen&quot;);&#xD;
+    	if(startCol == endCol){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+    	if(startRow == endRow){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+    //Queen moving in Upper Left diagonal&#xD;
+    	if((abs(startRow - endRow) == abs(startCol - endCol))){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+    	return moveValid;&#xD;
 }&#xD;
 //Player selected the King&#xD;
 if(ChessBoard[startRow][startCol] == 6){&#xD;
@@ -460,6 +457,178 @@ if(ChessBoard[startRow][startCol] == 6){&#xD;
 	return moveValid;&#xD;
 }&#xD;
  </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4rC7wEhEEemQ047qdi82Ug" specification="_ehy68EhEEemQ047qdi82Ug">
+        <language>C++</language>
+        <body>int rows_dist = abs(startRow - endRow);&#xD;
+int cols_dist = abs(startCol - endCol);&#xD;
+if(piece == 2){&#xD;
+    //Player 1 Rook moving down the board&#xD;
+	if(startRow &lt; endRow){&#xD;
+    		log.log(&quot;Rook moving down&quot;);&#xD;
+    		for(int i = startRow + 1; i &lt; endRow ; i++){&#xD;
+    			if(ChessBoard[i][startCol] > 0 ){&#xD;
+    			return true;&#xD;
+    			}&#xD;
+    }&#xD;
+    	return false;&#xD;
+    }&#xD;
+    else if (startRow > endRow){&#xD;
+    	log.log(&quot;Rook moving up&quot;);&#xD;
+    	for(int i = startRow -1; i > endRow; i--){&#xD;
+    		if(ChessBoard[i][startCol] > 0 ){&#xD;
+    			return true;&#xD;
+    		}&#xD;
+    }&#xD;
+    	return false;	&#xD;
+    }&#xD;
+    else if(startCol &lt; endCol){&#xD;
+    	for(int i = startCol + 1; i &lt; endCol ; i++){&#xD;
+    		if(ChessBoard[startRow][i] > 0 ){&#xD;
+    			return true;&#xD;
+    		}&#xD;
+    }&#xD;
+    	return false;&#xD;
+    }&#xD;
+    else{&#xD;
+    	for(int i = startCol - 1; i > endCol; i--){&#xD;
+    		if(ChessBoard[startRow][i] > 0 ){&#xD;
+    			return true;&#xD;
+    		}&#xD;
+    }&#xD;
+    		return false;&#xD;
+    	}&#xD;
+    }&#xD;
+    else if(piece == 4){&#xD;
+    //Bishop moving in upper left&#xD;
+    	if((startRow > endRow) &amp;&amp; (startCol > endCol)){&#xD;
+    		log.log(&quot;Bishop moving upper left&quot;);&#xD;
+    		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    			log.log(ChessBoard[startRow-i][startCol-i]);&#xD;
+    			if(ChessBoard[startRow-i][startCol-i] > 0 ){&#xD;
+    				return true;&#xD;
+    			}	&#xD;
+    }&#xD;
+    	return false;&#xD;
+    }&#xD;
+    //Bishop moving in upper right&#xD;
+    else if((startRow > endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+    	for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    		log.log(ChessBoard[startRow-i][startCol+i]);&#xD;
+    		if(ChessBoard[startRow-i][startCol+i] > 0 ){&#xD;
+    			return true;&#xD;
+    		}	&#xD;
+    }&#xD;
+    	return false;&#xD;
+    }&#xD;
+    //Bishop moving in lower left&#xD;
+    else if((startRow &lt; endRow) &amp;&amp; (startCol > endCol)){&#xD;
+    	log.log(&quot;Bishop moving upper left&quot;);&#xD;
+    	for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    		if(ChessBoard[startRow+i][startCol-i] > 0 ){&#xD;
+    			return true;&#xD;
+    		}	&#xD;
+    }&#xD;
+    	return false;&#xD;
+    }&#xD;
+    else if((startRow &lt; endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+    	for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    		log.log(ChessBoard[startRow+i][startCol+i]);&#xD;
+    		if(ChessBoard[startRow+i][startCol+i] > 0 ){&#xD;
+    			return true;&#xD;
+    			}	&#xD;
+    	}&#xD;
+    	return false;&#xD;
+    }&#xD;
+   }&#xD;
+    else if(piece == 5){&#xD;
+    //Queen moving left or right&#xD;
+    	if(startRow == endRow){&#xD;
+    		if(startCol > endCol){&#xD;
+    			for(int i = 1; i &lt; cols_dist; i ++){&#xD;
+    			log.log(ChessBoard[startRow][startCol-i]);&#xD;
+    				if(ChessBoard[startRow][startCol - i] > 0 ){&#xD;
+    				return true;&#xD;
+    				}&#xD;
+    }&#xD;
+    return false;&#xD;
+    }&#xD;
+    else{&#xD;
+    	for(int i = 1; i &lt; cols_dist; i ++){&#xD;
+    		log.log(ChessBoard[startRow][startCol+i]);&#xD;
+    		if(ChessBoard[startRow][startCol + i] > 0 ){&#xD;
+    			return true;&#xD;
+    		}&#xD;
+    }&#xD;
+    return false;&#xD;
+    }&#xD;
+    }&#xD;
+    //Queen moving up or down&#xD;
+    else if(startCol == endCol){&#xD;
+    	if(startRow > endRow){&#xD;
+    		for(int i = 1; i &lt; rows_dist; i ++){&#xD;
+    		log.log(ChessBoard[startRow-i][startCol]);&#xD;
+    			if(ChessBoard[startRow-i][startCol] > 0 ){&#xD;
+    				return true;&#xD;
+    			}&#xD;
+    }&#xD;
+    	return false;&#xD;
+    }&#xD;
+    else{&#xD;
+    	for(int i = 1; i &lt; rows_dist; i ++){&#xD;
+    	log.log(ChessBoard[startRow+i][startCol]);&#xD;
+    		if(ChessBoard[startRow+i][startCol] > 0 ){&#xD;
+    			return true;&#xD;
+    		}&#xD;
+    }&#xD;
+    return false;&#xD;
+    }&#xD;
+    }&#xD;
+    //Queen moving diagonally&#xD;
+    else{&#xD;
+    //Queen moving in upper left&#xD;
+    	if((startRow > endRow) &amp;&amp; (startCol > endCol)){&#xD;
+    		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    			log.log(ChessBoard[startRow-i][startCol-i]);&#xD;
+    			if(ChessBoard[startRow-i][startCol-i] > 0 ){&#xD;
+    				return true;&#xD;
+    				}	&#xD;
+    		}&#xD;
+    return false;&#xD;
+    }&#xD;
+    //Queen moving in upper right&#xD;
+    else if((startRow > endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+    	for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    		log.log(ChessBoard[startRow-i][startCol+i]);&#xD;
+    		if(ChessBoard[startRow-i][startCol+i] > 0 ){&#xD;
+    			return true;&#xD;
+    			}	&#xD;
+    		}&#xD;
+    return false;&#xD;
+    }&#xD;
+    //Queen moving in lower left&#xD;
+    else if((startRow &lt; endRow) &amp;&amp; (startCol > endCol)){&#xD;
+    	for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    		log.log(ChessBoard[startRow+i][startCol-i]);&#xD;
+    		if(ChessBoard[startRow+i][startCol-i] > 0 ){&#xD;
+    			return true;&#xD;
+    			}	&#xD;
+    		}&#xD;
+    return false;&#xD;
+    }&#xD;
+    else if((startRow &lt; endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+    	for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+    		log.log(ChessBoard[startRow+i][startCol+i]);&#xD;
+    		if(ChessBoard[startRow+i][startCol+i] > 0 ){&#xD;
+    			return true;&#xD;
+    			}	&#xD;
+    		}&#xD;
+    	return false;&#xD;
+    	}&#xD;
+    }&#xD;
+}&#xD;
+ &#xD;
+</body>
       </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_vFd-UEBREemqJPrZwKkwWQ" name="GetColIndex" concurrency="guarded" method="_JZnAgEBSEemqJPrZwKkwWQ">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_2CZUMEBREemqJPrZwKkwWQ" name="col">
@@ -499,6 +668,26 @@ if(ChessBoard[startRow][startCol] == 6){&#xD;
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_b3UboEO4Eem3r6TfPP7Ezw" name="moveValid" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ehy68EhEEemQ047qdi82Ug" name="PieceOnWay" concurrency="guarded" method="_4rC7wEhEEemQ047qdi82Ug">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_iz5CQEhEEemQ047qdi82Ug" name="startCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lVNvgEhEEemQ047qdi82Ug" name="startRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_m8IC8EhEEemQ047qdi82Ug" name="endCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pbMtcEhEEemQ047qdi82Ug" name="endRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_s2Op4EhEEemQ047qdi82Ug" name="blocked" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_e8pOcEhFEemQ047qdi82Ug" name="piece">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
