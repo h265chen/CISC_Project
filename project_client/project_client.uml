@@ -61,7 +61,7 @@ startGame.start().send();</body>
           <transition xmi:type="uml:Transition" xmi:id="_h2VScDuOEemh7Jv-t4KSvQ" name="" kind="external" source="_F5gbMDuOEemh7Jv-t4KSvQ" target="_geIwcDuOEemh7Jv-t4KSvQ">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_cID3cEs5EemM1b60lyH_SQ" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Hoyman&quot;,  &quot;queens&quot;);</body>
+              <body>mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Ting&quot;,  &quot;queens&quot;);</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_lkXqcDuOEemh7Jv-t4KSvQ" event="_kXJpYDuOEemh7Jv-t4KSvQ" port="_8mf-wDuNEemh7Jv-t4KSvQ"/>
           </transition>
@@ -235,15 +235,7 @@ else{&#xD;
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_0qlfoEBEEemqJPrZwKkwWQ" event="_67-RgD-9EemACYDE-qKd5g" port="_N_kTsD-9EemACYDE-qKd5g"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_s5AZsEBEEemqJPrZwKkwWQ" kind="external" source="_o0TOIEBEEemqJPrZwKkwWQ" target="_pjunAEtoEemM1b60lyH_SQ">
-            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_5VYDsEBYEemqJPrZwKkwWQ" name="Effect" isReentrant="false">
-              <language>C++</language>
-              <body>log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);&#xD;
-updateBoard(startCol,startRow,endCol,endRow);&#xD;
-move_valid.Player2MoveValid(startCol, startRow, endCol, endRow).send();&#xD;
-printBoard();</body>
-            </effect>
-          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_s5AZsEBEEemqJPrZwKkwWQ" kind="external" source="_o0TOIEBEEemqJPrZwKkwWQ" target="_pjunAEtoEemM1b60lyH_SQ"/>
           <transition xmi:type="uml:Transition" xmi:id="_utzYIEBEEemqJPrZwKkwWQ" name="Player2 Move Invalid" guard="_-9sHIEBEEemqJPrZwKkwWQ" kind="external" source="_o0TOIEBEEemqJPrZwKkwWQ" target="_RYXCMD_CEemACYDE-qKd5g">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_-9sHIEBEEemqJPrZwKkwWQ">
               <specification xmi:type="uml:OpaqueExpression" xmi:id="_-914IEBEEemqJPrZwKkwWQ">
