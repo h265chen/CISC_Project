@@ -1295,7 +1295,7 @@
     <edges xmi:type="notation:Connector" xmi:id="_pW2CYE2pEemdpc_tpjhLpw" type="Transition_Edge" source="_fXcqcEBKEempSqBHy1qydg" target="_DGxpcE2YEemdpc_tpjhLpw">
       <children xmi:type="notation:DecorationNode" xmi:id="_pW2CY02pEemdpc_tpjhLpw" type="Transition_NameLabel">
         <styles xmi:type="notation:BooleanValueStyle" xmi:id="_p4glAE2pEemdpc_tpjhLpw" name="IS_UPDATED_POSITION" booleanValue="true"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_pW2CZE2pEemdpc_tpjhLpw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pW2CZE2pEemdpc_tpjhLpw" x="6" y="29"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_pW2CZU2pEemdpc_tpjhLpw" type="Transition_GuardLabel">
         <styles xmi:type="notation:BooleanValueStyle" xmi:id="_p5aj8E2pEemdpc_tpjhLpw" name="IS_UPDATED_POSITION" booleanValue="true"/>

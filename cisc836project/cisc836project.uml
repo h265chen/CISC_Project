@@ -134,7 +134,7 @@ int P2_endRow = Player2Move[3] - '0';&#xD;
 &#xD;
 //Update the board with Player 2 moves&#xD;
 log.log(&quot;[Board] Updating board with Player 2 moves&quot;);&#xD;
-if(ChessBoard[P2_endRow][P2_endCol]){&#xD;
+if(ChessBoard[P2_endRow][P2_endCol] == -6){&#xD;
 	playerWins.Player2Wins().send();&#xD;
 }&#xD;
 else{&#xD;
@@ -843,11 +843,12 @@ log.log(&quot;[Player1Broker] Subscribing to Player2MoveDone&quot;);&#xD;
 mqtt.subscribe(&quot;Player2MoveDone&quot;);</body>
             </effect>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_pWGbgE2pEemdpc_tpjhLpw" kind="external" source="_fW7tEEBKEempSqBHy1qydg" target="_DGCCkE2YEemdpc_tpjhLpw">
+          <transition xmi:type="uml:Transition" xmi:id="_pWGbgE2pEemdpc_tpjhLpw" name="" kind="external" source="_fW7tEEBKEempSqBHy1qydg" target="_DGCCkE2YEemdpc_tpjhLpw">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_xQkXsE2pEemdpc_tpjhLpw" name="Effect" isReentrant="false">
               <language>C++</language>
               <body>log.log(&quot;[Player1Broker] Game over, Player 2 wins&quot;);</body>
             </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_hqoYEE2-Eemdpc_tpjhLpw" event="_LHFPQE2VEemdpc_tpjhLpw" port="_5Xm80E2UEemdpc_tpjhLpw"/>
           </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_m2jA0DuKEemdYIOBm08Mew" kind="initial"/>
           <subvertex xmi:type="uml:State" xmi:id="_m72-oDuKEemdYIOBm08Mew" name="Waiting To Start"/>
