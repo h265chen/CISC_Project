@@ -6,6 +6,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
@@ -29,8 +31,8 @@ class ChessView extends JFrame{
     final String dir = System.getProperty("user.dir");
     JToolBar tools = new JToolBar();
     
-    JLabel playerA = new JLabel("PlayerA");
-    JLabel playerB = new JLabel("PlayerB");
+    JLabel playerA = new JLabel("Player1");
+    JLabel playerB = new JLabel("Player2");
     
     public JLabel playerARst = new JLabel("Wait to check in");
     public JLabel playerBRst = new JLabel("Wait to check in");
@@ -39,6 +41,14 @@ class ChessView extends JFrame{
     
 	public ChessView() {
 		initializeGui();
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("WindowClosingDemo.windowClosing");
+                System.exit(0);
+            }
+		});
+		
 		
 	}
 	public final void initializeGui() {

@@ -53,6 +53,7 @@ public class Connector {
 						break;
 					case MqttManager.Player2Connected:
 						mGame.setPlayerStatus(0, "It is Your Turn");
+						mGame.setPlayerStatus(1, "");
 						break;
 					case MqttManager.Player1MoveDone:
 						mGame.setPlayerStatus(1, "It is Your Turn");
@@ -67,7 +68,7 @@ public class Connector {
 					case MqttManager.PlayerWins:	
 						//0 means A wins
 						// 1 means B wins
-						if(message.toString() == "0") {
+						if(message.toString() == "1") {
 							mGame.showHint("PlayerA Wins the Game");
 							mGame.setPlayerStatus(0, "WIN");
 							mGame.setPlayerStatus(1, "LOSE");
