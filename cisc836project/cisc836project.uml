@@ -14,21 +14,17 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_s4aIADCGEemPZPXVYM39kg" name="board" visibility="protected" type="_E_LVsDBxEemPZPXVYM39kg" isOrdered="true" aggregation="composite"/>
       <ownedAttribute xmi:type="uml:Port" xmi:id="_c_wiYDCIEemPZPXVYM39kg" name="startGame" visibility="protected" type="_EQqLYDCIEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qrDpsDuJEemdYIOBm08Mew" name="broker" visibility="protected" type="_pC8cYDuJEemdYIOBm08Mew" isOrdered="true" aggregation="composite"/>
-      <ownedConnector xmi:type="uml:Connector" xmi:id="_jcGTsDCIEemPZPXVYM39kg" name="RTConnector2">
-        <end xmi:type="uml:ConnectorEnd" xmi:id="_jcHh0DCIEemPZPXVYM39kg" role="_c_wiYDCIEemPZPXVYM39kg"/>
-        <end xmi:type="uml:ConnectorEnd" xmi:id="_jcHh0TCIEemPZPXVYM39kg" partWithPort="_s4aIADCGEemPZPXVYM39kg" role="_gFVMMDCIEemPZPXVYM39kg"/>
-      </ownedConnector>
       <ownedConnector xmi:type="uml:Connector" xmi:id="_Cfd6EDuKEemdYIOBm08Mew" name="RTConnector3">
         <end xmi:type="uml:ConnectorEnd" xmi:id="_Cf27oDuKEemdYIOBm08Mew" partWithPort="_qrDpsDuJEemdYIOBm08Mew" role="_1ngJIDuJEemdYIOBm08Mew"/>
         <end xmi:type="uml:ConnectorEnd" xmi:id="_CgAsoDuKEemdYIOBm08Mew" partWithPort="_s4aIADCGEemPZPXVYM39kg" role="_89GdsDuJEemdYIOBm08Mew"/>
       </ownedConnector>
-      <ownedConnector xmi:type="uml:Connector" xmi:id="_RLAsADuLEemdYIOBm08Mew" name="RTConnector4">
-        <end xmi:type="uml:ConnectorEnd" xmi:id="_RLBTEDuLEemdYIOBm08Mew" partWithPort="_qrDpsDuJEemdYIOBm08Mew" role="_DG0YgDuLEemdYIOBm08Mew"/>
-        <end xmi:type="uml:ConnectorEnd" xmi:id="_RLBTETuLEemdYIOBm08Mew" partWithPort="_s4aIADCGEemPZPXVYM39kg" role="_LAUrYDuLEemdYIOBm08Mew"/>
-      </ownedConnector>
       <ownedConnector xmi:type="uml:Connector" xmi:id="__OhI4DuYEemdYIOBm08Mew" name="RTConnector5">
         <end xmi:type="uml:ConnectorEnd" xmi:id="__OiXADuYEemdYIOBm08Mew" partWithPort="_qrDpsDuJEemdYIOBm08Mew" role="__DvjoDuVEemdYIOBm08Mew"/>
         <end xmi:type="uml:ConnectorEnd" xmi:id="__OiXATuYEemdYIOBm08Mew" partWithPort="_s4aIADCGEemPZPXVYM39kg" role="_BXtKUDuWEemdYIOBm08Mew"/>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_lF-hwEtGEem8XeeLxDY_Dw" name="RTConnector6">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_lGBlEEtGEem8XeeLxDY_Dw" partWithPort="_qrDpsDuJEemdYIOBm08Mew" role="_cP6gAEtGEem8XeeLxDY_Dw"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_lGBlEUtGEem8XeeLxDY_Dw" role="_c_wiYDCIEemPZPXVYM39kg"/>
       </ownedConnector>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_0yk3wDAOEemPZPXVYM39kg" name="StateMachine" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_0zZXIDAOEemPZPXVYM39kg" name="Region">
@@ -49,76 +45,313 @@ startGame.start().send();&#xD;
         </region>
       </ownedBehavior>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_60MUkDAREemPZPXVYM39kg" name="Player2" isActive="true"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_E_LVsDBxEemPZPXVYM39kg" name="Board" classifierBehavior="_zRBacDCHEemPZPXVYM39kg" isActive="true">
       <ownedAttribute xmi:type="uml:Port" xmi:id="_J6Ix0DCHEemPZPXVYM39kg" name="log" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
         <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Port" xmi:id="_gFVMMDCIEemPZPXVYM39kg" name="startGame" visibility="public" type="_EQqLYDCIEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_GQKMMDuEEemdYIOBm08Mew" name="mqtt" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXMcnWEeiTgcmKwS4Zdw"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_68ZnUDFvEem4RqP6_nGyvA" name="P1MoveValid">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_A3V7wDFwEem4RqP6_nGyvA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_M0li8DsKEemdYIOBm08Mew" name="round">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_M0li8DsKEemdYIOBm08Mew" name="startRow">
         <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Port" xmi:id="_GQKMMDuEEemdYIOBm08Mew" name="mqtt" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
-        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXMcnWEeiTgcmKwS4Zdw"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Port" xmi:id="_89GdsDuJEemdYIOBm08Mew" name="chessMove" visibility="public" type="_vvu6cDCGEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
-      <ownedAttribute xmi:type="uml:Port" xmi:id="_LAUrYDuLEemdYIOBm08Mew" name="startup_broker" visibility="public" type="_AuwU8DuLEemdYIOBm08Mew" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_89GdsDuJEemdYIOBm08Mew" name="BoardUpdate" visibility="public" type="_vvu6cDCGEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
       <ownedAttribute xmi:type="uml:Port" xmi:id="_BXtKUDuWEemdYIOBm08Mew" name="move_valid" visibility="public" type="_9trvoDuVEemdYIOBm08Mew" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iT8AQD_HEempSqBHy1qydg" name="startCol">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iaAzED_HEempSqBHy1qydg" name="endRow">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ifKY0D_HEempSqBHy1qydg" name="endCol">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_zRBacDCHEemPZPXVYM39kg" name="Board_SM" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_zRJWQDCHEemPZPXVYM39kg" name="Region">
-          <transition xmi:type="uml:Transition" xmi:id="_zRPc4DCHEemPZPXVYM39kg" name="Initial" source="_zRKkYDCHEemPZPXVYM39kg" target="_43uWcDsKEemdYIOBm08Mew">
+          <transition xmi:type="uml:Transition" xmi:id="_zRPc4DCHEemPZPXVYM39kg" name="Initial" source="_zRKkYDCHEemPZPXVYM39kg" target="_zRNAoDCHEemPZPXVYM39kg">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_517McDr8EemdYIOBm08Mew" name="Effect" isReentrant="false">
               <language>C++</language>
               <body>log.log(&quot;[Board] Ready to start&quot;);</body>
             </effect>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_6U9wgDsKEemdYIOBm08Mew" name="" kind="external" source="_43uWcDsKEemdYIOBm08Mew" target="_zRNAoDCHEemPZPXVYM39kg">
-            <trigger xmi:type="uml:Trigger" xmi:id="_6rUbADsKEemdYIOBm08Mew" event="_Fk4MUDCIEemPZPXVYM39kg" port="_gFVMMDCIEemPZPXVYM39kg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_9bXJMDuYEemdYIOBm08Mew" name="" kind="external" source="_zRNAoDCHEemPZPXVYM39kg" target="_LBAHgDyhEemdYIOBm08Mew">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_DE88IDyPEemdYIOBm08Mew" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>using namespace std;&#xD;
+&#xD;
+char * startMove = strdup(start);&#xD;
+char * endMove = strdup(end);&#xD;
+&#xD;
+&#xD;
+if (strlen(startMove) > 2 || strlen(endMove) > 2 || isalpha(startMove[0]) == 0 || isalpha(endMove[0]) == 0 || isdigit(startMove[1]) == 0 || isdigit(endMove[1]) == 0){&#xD;
+	P1MoveValid = false;&#xD;
+	log.log(&quot;[Board] Command line argument invalid, please input a valid start move like 'a2' and valid end move like 'a3'&quot;);&#xD;
+}&#xD;
+else{&#xD;
+	startRow = (startMove[1] - '0') -1;&#xD;
+	endRow = (endMove[1] - '0') - 1;&#xD;
+	startCol= GetCol(startMove);&#xD;
+	endCol= GetCol(endMove);&#xD;
+	P1MoveValid = ValidateMove( startCol, startRow, endCol, endRow);&#xD;
+}&#xD;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_3b7OkEAzEempSqBHy1qydg" event="_FycAgDunEemdYIOBm08Mew" port="_BXtKUDuWEemdYIOBm08Mew"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_9bXJMDuYEemdYIOBm08Mew" name="" kind="external" source="_zRNAoDCHEemPZPXVYM39kg" target="_8ZA7YDuYEemdYIOBm08Mew">
-            <trigger xmi:type="uml:Trigger" xmi:id="_HAWlIDunEemdYIOBm08Mew" event="_FycAgDunEemdYIOBm08Mew" port="_BXtKUDuWEemdYIOBm08Mew"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Wb6roDyhEemdYIOBm08Mew" name="Move is Invalid" guard="_eAScADyhEemdYIOBm08Mew" kind="external" source="_LBAHgDyhEemdYIOBm08Mew" target="_zRNAoDCHEemPZPXVYM39kg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_eAScADyhEemdYIOBm08Mew">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_eBO3MDyhEemdYIOBm08Mew">
+                <language>C++</language>
+                <body>return (P1MoveValid == false);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_gb6J4DyhEemdYIOBm08Mew" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Board] Player1 gave an invalid move&quot;);&#xD;
+move_valid.Player1MoveInvalid().send();</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_Z1QmADyhEemdYIOBm08Mew" name="Move is Valid" kind="external" source="_LBAHgDyhEemdYIOBm08Mew" target="_CdwvkEtREem8XeeLxDY_Dw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_j2_68D4FEempSqBHy1qydg" name="Player 2 Move Received" kind="external" source="_8ZA7YDuYEemdYIOBm08Mew" target="_zRNAoDCHEemPZPXVYM39kg">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Imu8oEBTEempSqBHy1qydg" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>using namespace std;&#xD;
+&#xD;
+//Convert Player 2 message to integer indexes&#xD;
+int P2_startCol = Player2Move[0] - '0';&#xD;
+int P2_startRow = Player2Move[1] - '0';&#xD;
+int P2_endCol = Player2Move[2] - '0';&#xD;
+int p2_endRow = Player2Move[3] - '0';&#xD;
+&#xD;
+//Update the board with Player 2 moves&#xD;
+log.log(&quot;[Board] Updating board with Player 2 moves&quot;);&#xD;
+updateBoard(P2_startCol,P2_startRow,P2_endCol, p2_endRow);&#xD;
+BoardUpdate.BoardUpdated().send();&#xD;
+printBoard();</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_vw3zIEBOEempSqBHy1qydg" event="_tNyyYEBOEempSqBHy1qydg" port="_89GdsDuJEemdYIOBm08Mew"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_v7OogEtQEem8XeeLxDY_Dw" name="" guard="_48ChsEtQEem8XeeLxDY_Dw" kind="external" source="_CdwvkEtREem8XeeLxDY_Dw" target="_s-Yc4EtQEem8XeeLxDY_Dw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_48ChsEtQEem8XeeLxDY_Dw">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_48DIwEtQEem8XeeLxDY_Dw">
+                <language>C++</language>
+                <body>return (ChessBoard[endRow][endCol] == 6);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_x9FykEtQEem8XeeLxDY_Dw" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Board] Player 1 wins&quot;);&#xD;
+updateBoard(startCol, startRow, endCol, endRow);&#xD;
+move_valid.Player1MoveValid(startCol, startRow, endCol, endRow).send();&#xD;
+printBoard();</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_Lbp3oEtREem8XeeLxDY_Dw" kind="external" source="_CdwvkEtREem8XeeLxDY_Dw" target="_8ZA7YDuYEemdYIOBm08Mew">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_xAgZEEtREem8XeeLxDY_Dw" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>updateBoard(startCol, startRow, endCol, endRow);&#xD;
+move_valid.Player1MoveValid(startCol, startRow, endCol, endRow).send();&#xD;
+printBoard();</body>
+            </effect>
           </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_zRKkYDCHEemPZPXVYM39kg" kind="initial"/>
-          <subvertex xmi:type="uml:State" xmi:id="_zRNAoDCHEemPZPXVYM39kg" name="State1">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_YzcXEDsJEemdYIOBm08Mew" name="Entry" isReentrant="false">
-              <language>C++</language>
-              <body>log.log(&quot;[Board] Game started, starting up Broker!&quot;);&#xD;
-startup_broker.game_start().send();</body>
-            </entry>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_43uWcDsKEemdYIOBm08Mew" name="State4"/>
-          <subvertex xmi:type="uml:State" xmi:id="_8ZA7YDuYEemdYIOBm08Mew" name="State5">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_suSKEDunEemdYIOBm08Mew" name="Entry" isReentrant="false">
-              <language>C++</language>
-              <body>move_valid.Player1MoveValid().send();</body>
-            </entry>
-          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_zRNAoDCHEemPZPXVYM39kg" name="Player1Turn"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8ZA7YDuYEemdYIOBm08Mew" name="Player2Turn"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_LBAHgDyhEemdYIOBm08Mew" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_s-Yc4EtQEem8XeeLxDY_Dw" name="Player2KingCaptured"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_CdwvkEtREem8XeeLxDY_Dw" kind="choice"/>
         </region>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WkIlEDGAEem4RqP6_nGyvA" specification="_MhQL4DF1Eem4RqP6_nGyvA">
         <language>C++</language>
         <body>using namespace std;&#xD;
 char charcol1 = Start[0];&#xD;
-char charcol2 = End[0];&#xD;
 int startcol;&#xD;
-int startrow = Start[1];&#xD;
-int endcol;&#xD;
-int endrow = End[1];&#xD;
 switch(charcol1){&#xD;
-    case 'A': startcol = 0; break;&#xD;
-    case 'B': startcol = 1; break;&#xD;
-    case 'C': startcol = 2; break;&#xD;
-    case 'D': startcol = 3; break;&#xD;
-    case 'E': startcol = 4; break;&#xD;
-    case 'F': startcol = 5; break;&#xD;
-    case 'G': startcol = 6; break;&#xD;
-    case 'H': startcol = 7; break;&#xD;
+	case 'A':&#xD;
+	case 'a':&#xD;
+		startcol = 0; &#xD;
+		break;&#xD;
+    	case 'B':&#xD;
+	case 'b': &#xD;
+		startcol = 1; &#xD;
+		break;&#xD;
+    	case 'C':&#xD;
+	case 'c': &#xD;
+		startcol = 2; &#xD;
+		break;&#xD;
+    	case 'D':&#xD;
+	case 'd':  &#xD;
+		startcol = 3; &#xD;
+		break;&#xD;
+    	case 'E': &#xD;
+	case 'e': &#xD;
+		startcol = 4; &#xD;
+		break;&#xD;
+    	case 'F': &#xD;
+	case 'f': &#xD;
+		startcol = 5; &#xD;
+		break;&#xD;
+    	case 'G': &#xD;
+	case 'g': &#xD;
+		startcol = 6; &#xD;
+		break;&#xD;
+    	case 'H': &#xD;
+	case 'h': &#xD;
+		startcol = 7; &#xD;
+		break;&#xD;
 }&#xD;
-switch(charcol2){&#xD;
+&#xD;
+return startcol;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_F8Ln8DyPEemdYIOBm08Mew" specification="_oJ98YDyOEemdYIOBm08Mew">
+        <language>C++</language>
+        <body>bool moveValid = false;&#xD;
+if(ChessBoard[startRow][startCol] == 0){&#xD;
+	log.log(&quot;[Board]You selected empty as start&quot;);&#xD;
+    	return moveValid;&#xD;
+    }&#xD;
+if(ChessBoard[startRow][startCol] > 0){&#xD;
+	log.log(&quot;[Board]You selected another players piece&quot;);&#xD;
+    	return moveValid;&#xD;
+    }&#xD;
+if(ChessBoard[endRow][endCol] &lt; 0 ){&#xD;
+    	log.log(&quot;[Board]Selected End move occupied by one of your pieces&quot;);&#xD;
+    	return moveValid;&#xD;
+    }&#xD;
+    //Player selected a pawn&#xD;
+if(ChessBoard[startRow][startCol] == -1){&#xD;
+	//Pawns are allowed to move more than one step in the first move&#xD;
+	if(startRow == 1){&#xD;
+		if(startCol == endCol &amp;&amp; endRow - startRow == 1 &amp;&amp; ChessBoard[endRow][endCol] == 0){&#xD;
+			return moveValid = true;&#xD;
+		}&#xD;
+		if(startCol == endCol &amp;&amp; endRow - startRow == 2 &amp;&amp; ChessBoard[endRow][endCol] == 0){&#xD;
+			return moveValid = true;&#xD;
+		}&#xD;
+    		//Capturing a piece on diagonal&#xD;
+    		if(abs(endCol - startCol) == 1 &amp;&amp; abs(endRow - startRow) == 1 &amp;&amp; ChessBoard[endRow][endCol] > 0){&#xD;
+    			return moveValid = true;&#xD;
+    		}&#xD;
+	}&#xD;
+	else{&#xD;
+    	//Moving one step into an empty space&#xD;
+    		if(startCol == endCol &amp;&amp; endRow - startRow ==1 &amp;&amp; ChessBoard[endRow][endCol] == 0){&#xD;
+    			return moveValid = true;&#xD;
+    		}&#xD;
+    		//Capturing a piece on diagonal&#xD;
+    		if(abs(endCol - startCol) == 1 &amp;&amp; abs(endRow - startRow) == 1 &amp;&amp; ChessBoard[endRow][endCol] > 0){&#xD;
+    			return moveValid = true;&#xD;
+    		}&#xD;
+	}&#xD;
+	log.log(&quot;[Board] Pawns can only move one step forward, and capture diagonally&quot;);&#xD;
+   	return moveValid = false;&#xD;
+   }&#xD;
+    //Player selected a rook&#xD;
+if(ChessBoard[startRow][startCol] == -2){&#xD;
+    //Moving into an empty cell in the same column&#xD;
+    if(startCol == endCol){&#xD;
+    	if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    		log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    		return moveValid = false;&#xD;
+    	}&#xD;
+    	return moveValid = true;&#xD;
+    }&#xD;
+    //Moving into an empty cell in the same row&#xD;
+    if(startRow == endRow){&#xD;
+    	if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    		log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    		return moveValid = false;&#xD;
+    	}&#xD;
+    	return moveValid = true;&#xD;
+    }&#xD;
+	log.log(&quot;[Board] Rooks can only move horizontally or vertically&quot;);&#xD;
+    	return moveValid;&#xD;
+}&#xD;
+    //Player selected a knight&#xD;
+if(ChessBoard[startRow][startCol] == -3){&#xD;
+    	//Knight moving in Upper left L&#xD;
+	if(abs(endRow - startRow) == 2 &amp;&amp; abs(startCol - endCol) == 1){&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+   	if(abs(endRow - startRow) == 1 &amp;&amp; abs(startCol - endCol) == 2){&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+	log.log(&quot;[Board] Knights can only move in L formations&quot;);&#xD;
+    	return moveValid;&#xD;
+    }&#xD;
+    //Player selected a bishop&#xD;
+if(ChessBoard[startRow][startCol] == -4){&#xD;
+    //Bishop moving in Upper Left diagonal&#xD;
+    	if((abs(startRow - endRow) == abs(startCol - endCol))){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    	return moveValid = true;&#xD;
+    }&#xD;
+	log.log(&quot;[Board]Bishops can only move diagonally&quot;);&#xD;
+    	return moveValid;&#xD;
+    }&#xD;
+    //Player selected the Queen&#xD;
+if(ChessBoard[startRow][startCol] == -5){&#xD;
+    	log.log(&quot;Player 1 selected Queen&quot;);&#xD;
+    	if(startCol == endCol){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+    	if(startRow == endRow){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+    //Queen moving in Upper Left diagonal&#xD;
+    	if((abs(startRow - endRow) == abs(startCol - endCol))){&#xD;
+    		if(PieceOnWay(startCol,startRow,endCol,endRow,ChessBoard[startRow][startCol])){&#xD;
+    			log.log(&quot;[Board] There is a piece in the way of desired path&quot;);&#xD;
+    			return moveValid = false;&#xD;
+    		}&#xD;
+    		return moveValid = true;&#xD;
+    	}&#xD;
+	log.log(&quot;[Board] Queen can only move diagonally, horizontally and vertically&quot;);&#xD;
+    	return moveValid;&#xD;
+    }&#xD;
+    //Player selected the King&#xD;
+if(ChessBoard[startRow][startCol] == -6){&#xD;
+    	log.log(&quot;Player 1 selected the King&quot;);&#xD;
+    	//Moving one step in the same column&#xD;
+    		if(startCol == endCol &amp;&amp; abs(startRow - endRow) ==1){&#xD;
+    			return moveValid = true;&#xD;
+    		}&#xD;
+    //Moving one step in the same row&#xD;
+    		if(startRow == endRow &amp;&amp; abs(startCol - endCol) ==1){&#xD;
+    			return moveValid = true;&#xD;
+    		}&#xD;
+    //Moving one step along any diagonal&#xD;
+    		if(abs(startCol - endCol) == 1 &amp;&amp; abs(startRow - endRow) == 1){&#xD;
+    			return moveValid = true;&#xD;
+    		}&#xD;
+	log.log(&quot;[Board] King can only move one step in any direction&quot;);&#xD;
+    	return moveValid;&#xD;
+}&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WnPQADyPEemdYIOBm08Mew">
+        <language>C++</language>
+        <body>    using namespace std;&#xD;
+    char charcol2 = End[0];&#xD;
+    int endcol;&#xD;
+    switch(charcol2){&#xD;
     case 'A': endcol = 0; break;&#xD;
     case 'B': endcol = 1; break;&#xD;
     case 'C': endcol = 2; break;&#xD;
@@ -127,43 +360,315 @@ switch(charcol2){&#xD;
     case 'F': endcol = 5; break;&#xD;
     case 'G': endcol = 6; break;&#xD;
     case 'H': endcol = 7; break;&#xD;
-}&#xD;
-&#xD;
+    }&#xD;
+    return endcol;&#xD;
 </body>
       </ownedBehavior>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_MhQL4DF1Eem4RqP6_nGyvA" name="MovePiece" concurrency="guarded" method="_WkIlEDGAEem4RqP6_nGyvA">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_V5BhUDyeEemdYIOBm08Mew" specification="_VUydwDycEemdYIOBm08Mew">
+        <language>C++</language>
+        <body>using namespace std;&#xD;
+for(int i = 0; i &lt; 8 ; i++){&#xD;
+	for(int j = 0; j &lt; 8; j++){&#xD;
+		cout&lt;&lt;ChessBoard[i][j];&#xD;
+	}&#xD;
+	cout&lt;&lt;&quot;\n&quot;;&#xD;
+}&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ee_BcDygEemdYIOBm08Mew" specification="_3tFcQDyfEemdYIOBm08Mew">
+        <language>C++</language>
+        <body>    ChessBoard[endRow][endCol] = ChessBoard[startRow][startCol];&#xD;
+    ChessBoard[startRow][startCol] = 0;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_FxUywD4DEempSqBHy1qydg">
+        <language>C++</language>
+        <body>    int rows_dist = abs(startRow - endRow);&#xD;
+    int col_dist = abs(startCol - endCol);&#xD;
+    //Player selected a rook, check if there is a piece in the way&#xD;
+    if(piece == -2){&#xD;
+    //Moving in downwards column&#xD;
+    if(startRow &lt; endRow){&#xD;
+    for(int i = 0; i &lt; rows_dist ; i++){&#xD;
+    if(ChessBoard[startRow+i][startCol] &lt; 0 ){&#xD;
+    return true;&#xD;
+    }&#xD;
+    }&#xD;
+    }&#xD;
+ &#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4mHucEThEem-IuJ85sRorA" specification="_mzCHUEThEem-IuJ85sRorA">
+        <language>C++</language>
+        <body>int rows_dist = abs(startRow - endRow);&#xD;
+int cols_dist = abs(startCol - endCol);&#xD;
+if(piece == -2){&#xD;
+//Player 1 Rook moving down the board&#xD;
+	if(startRow &lt; endRow){&#xD;
+		log.log(&quot;Rook moving down&quot;);&#xD;
+ 		for(int i = startRow + 1; i &lt; endRow ; i++){&#xD;
+    			if(ChessBoard[i][startCol] &lt; 0 ){&#xD;
+    				return true;&#xD;
+    			}&#xD;
+    		}&#xD;
+		return false;&#xD;
+    	}&#xD;
+	else if (startRow > endRow){&#xD;
+		log.log(&quot;Rook moving up&quot;);&#xD;
+		for(int i = startRow -1; i > endRow; i--){&#xD;
+    			if(ChessBoard[i][startCol] &lt; 0 ){&#xD;
+    				return true;&#xD;
+			}&#xD;
+		&#xD;
+		}&#xD;
+		return false;	&#xD;
+	}&#xD;
+	else if(startCol &lt; endCol){&#xD;
+		log.log(&quot;Rook moving to the right&quot;);&#xD;
+ 		for(int i = startCol + 1; i &lt; endCol ; i++){&#xD;
+    			if(ChessBoard[startRow][i] &lt; 0 ){&#xD;
+    				return true;&#xD;
+    			}&#xD;
+    		}&#xD;
+		return false;&#xD;
+    	}&#xD;
+	else{&#xD;
+		log.log(&quot;Rook moving to the left&quot;);&#xD;
+ 		for(int i = startCol - 1; i > endCol; i--){&#xD;
+    			if(ChessBoard[startRow][i] &lt; 0 ){&#xD;
+    				return true;&#xD;
+    			}&#xD;
+    		}&#xD;
+		return false;&#xD;
+    	}&#xD;
+ }&#xD;
+else if(piece == -4){&#xD;
+	//Bishop moving in upper left&#xD;
+	if((startRow > endRow) &amp;&amp; (startCol > endCol)){&#xD;
+		log.log(&quot;Bishop moving upper left&quot;);&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow-i][startCol-i]);&#xD;
+			if(ChessBoard[startRow-i][startCol-i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	//Bishop moving in upper right&#xD;
+	else if((startRow > endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+		log.log(&quot;Bishop moving upper left&quot;);&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow-i][startCol+i]);&#xD;
+			if(ChessBoard[startRow-i][startCol+i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	//Bishop moving in lower left&#xD;
+	else if((startRow &lt; endRow) &amp;&amp; (startCol > endCol)){&#xD;
+		log.log(&quot;Bishop moving upper left&quot;);&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow+i][startCol-i]);&#xD;
+			if(ChessBoard[startRow+i][startCol-i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	else if((startRow &lt; endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+		log.log(&quot;Bishop moving upper left&quot;);&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow+i][startCol+i]);&#xD;
+			if(ChessBoard[startRow+i][startCol+i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+}&#xD;
+else if(piece == -5){&#xD;
+	//Queen moving left or right&#xD;
+	if(startRow == endRow){&#xD;
+		if(startCol > endCol){&#xD;
+			for(int i = 1; i &lt; cols_dist; i ++){&#xD;
+				log.log(ChessBoard[startRow][startCol-i]);&#xD;
+				if(ChessBoard[startRow][startCol - i] &lt; 0 ){&#xD;
+					return true;&#xD;
+				}&#xD;
+			}&#xD;
+			return false;&#xD;
+		}&#xD;
+		else{&#xD;
+			for(int i = 1; i &lt; cols_dist; i ++){&#xD;
+				log.log(ChessBoard[startRow][startCol+i]);&#xD;
+				if(ChessBoard[startRow][startCol + i] &lt; 0 ){&#xD;
+					return true;&#xD;
+				}&#xD;
+			}&#xD;
+			return false;&#xD;
+&#xD;
+		}&#xD;
+&#xD;
+&#xD;
+&#xD;
+	}&#xD;
+	//Queen moving up or down&#xD;
+	else if(startCol == endCol){&#xD;
+		if(startRow > endRow){&#xD;
+			for(int i = 1; i &lt; rows_dist; i ++){&#xD;
+				log.log(ChessBoard[startRow-i][startCol]);&#xD;
+				if(ChessBoard[startRow-i][startCol] &lt; 0 ){&#xD;
+					return true;&#xD;
+				}&#xD;
+			}&#xD;
+			return false;&#xD;
+		}&#xD;
+		else{&#xD;
+			for(int i = 1; i &lt; rows_dist; i ++){&#xD;
+				log.log(ChessBoard[startRow+i][startCol]);&#xD;
+				if(ChessBoard[startRow+i][startCol] &lt; 0 ){&#xD;
+					return true;&#xD;
+				}&#xD;
+			}&#xD;
+			return false;&#xD;
+		}&#xD;
+	}&#xD;
+	//Queen moving diagonally&#xD;
+	else{&#xD;
+	//Queen moving in upper left&#xD;
+	if((startRow > endRow) &amp;&amp; (startCol > endCol)){&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow-i][startCol-i]);&#xD;
+			if(ChessBoard[startRow-i][startCol-i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	//Queen moving in upper right&#xD;
+	else if((startRow > endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow-i][startCol+i]);&#xD;
+			if(ChessBoard[startRow-i][startCol+i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	//Queen moving in lower left&#xD;
+	else if((startRow &lt; endRow) &amp;&amp; (startCol > endCol)){&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow+i][startCol-i]);&#xD;
+			if(ChessBoard[startRow+i][startCol-i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	else if((startRow &lt; endRow) &amp;&amp; (startCol &lt; endCol)){&#xD;
+		for(int i = 1 ; i &lt; rows_dist ; i++){&#xD;
+			log.log(ChessBoard[startRow+i][startCol+i]);&#xD;
+			if(ChessBoard[startRow+i][startCol+i] &lt; 0 ){&#xD;
+				return true;&#xD;
+			}	&#xD;
+		&#xD;
+		}&#xD;
+		return false;&#xD;
+	}&#xD;
+	}&#xD;
+}&#xD;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_MhQL4DF1Eem4RqP6_nGyvA" name="GetCol" concurrency="guarded" method="_WkIlEDGAEem4RqP6_nGyvA">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qFNwUDGGEem6scIjjy_ZLA" name="Start">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_t_plkDGGEem6scIjjy_ZLA" name="End">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_MCheoDyQEemdYIOBm08Mew" name="startCol" visibility="public" direction="return" effect="create">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_oJ98YDyOEemdYIOBm08Mew" name="ValidateMove" concurrency="guarded" method="_F8Ln8DyPEemdYIOBm08Mew">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tJKS4DyREemdYIOBm08Mew" name="startCol" visibility="public" effect="create">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tqBkQDyREemdYIOBm08Mew" name="startRow" visibility="public" effect="create">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tv7_ADyREemdYIOBm08Mew" name="endCol" visibility="public" effect="create">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tzykQDyREemdYIOBm08Mew" name="endRow" visibility="public" effect="create">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7PDkoDyTEemdYIOBm08Mew" name="moveValid" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_3tFcQDyfEemdYIOBm08Mew" name="updateBoard" concurrency="guarded" method="_Ee_BcDygEemdYIOBm08Mew">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7OJvQDyfEemdYIOBm08Mew" name="startCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8YJdMDyfEemdYIOBm08Mew" name="startRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8fCvYDyfEemdYIOBm08Mew" name="endCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8jxeYDyfEemdYIOBm08Mew" name="endRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_VUydwDycEemdYIOBm08Mew" name="printBoard" concurrency="guarded" method="_V5BhUDyeEemdYIOBm08Mew"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_mzCHUEThEem-IuJ85sRorA" name="PieceOnWay" concurrency="guarded" method="_4mHucEThEem-IuJ85sRorA">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qWY5UEThEem-IuJ85sRorA" name="startCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_r6uZ4EThEem-IuJ85sRorA" name="startRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ttpJAEThEem-IuJ85sRorA" name="endCol">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_vacCAEThEem-IuJ85sRorA" name="endRow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_w_xBEEThEem-IuJ85sRorA" name="piece">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2L8yEEThEem-IuJ85sRorA" name="blocked" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_vvzL4DCGEemPZPXVYM39kg" name="ChessMove">
-      <packagedElement xmi:type="uml:Collaboration" xmi:id="_vvu6cDCGEemPZPXVYM39kg" name="ChessMove">
+    <packagedElement xmi:type="uml:Package" xmi:id="_vvzL4DCGEemPZPXVYM39kg" name="BoardUpdate">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_vvu6cDCGEemPZPXVYM39kg" name="BoardUpdate">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vwa28DCGEemPZPXVYM39kg" client="_vvu6cDCGEemPZPXVYM39kg" supplier="_vwTiMDCGEemPZPXVYM39kg" contract="_vwTiMDCGEemPZPXVYM39kg"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vxIBkDCGEemPZPXVYM39kg" client="_vvu6cDCGEemPZPXVYM39kg" supplier="_vxDwIDCGEemPZPXVYM39kg" contract="_vxDwIDCGEemPZPXVYM39kg"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_vwTiMDCGEemPZPXVYM39kg" name="ChessMove">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_3pH4kDCGEemPZPXVYM39kg" name="RequestMove"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_vw_esDCGEemPZPXVYM39kg" name="ChessMove~">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_2nUdUDCGEemPZPXVYM39kg" name="ReturnMove">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0fjiwDCKEemPZPXVYM39kg" name="Piece">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_hPCDgDFqEem4RqP6_nGyvA" name="Move">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_vwTiMDCGEemPZPXVYM39kg" name="BoardUpdate">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_tNnMMEBOEempSqBHy1qydg" name="Player2MoveMessage">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_yKuJ8EBPEempSqBHy1qydg" name="Player2Move">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_vw_esDCGEemPZPXVYM39kg" name="BoardUpdate~">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xCVX0EBKEempSqBHy1qydg" name="BoardUpdated"/>
+      </packagedElement>
       <packagedElement xmi:type="uml:Usage" xmi:id="_vxB68DCGEemPZPXVYM39kg" client="_vvu6cDCGEemPZPXVYM39kg" supplier="_vw_esDCGEemPZPXVYM39kg"/>
       <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_vxCiADCGEemPZPXVYM39kg" name="*"/>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_vxDwIDCGEemPZPXVYM39kg" name="ChessMoveIO"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_vxDwIDCGEemPZPXVYM39kg" name="BoardUpdateIO"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_vxJPsDCGEemPZPXVYM39kg" client="_vvu6cDCGEemPZPXVYM39kg" supplier="_vxDwIDCGEemPZPXVYM39kg"/>
-      <packagedElement xmi:type="uml:CallEvent" xmi:id="_2oEEMDCGEemPZPXVYM39kg" operation="_2nUdUDCGEemPZPXVYM39kg"/>
-      <packagedElement xmi:type="uml:CallEvent" xmi:id="_3pJtwDCGEemPZPXVYM39kg" operation="_3pH4kDCGEemPZPXVYM39kg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_xCrWEEBKEempSqBHy1qydg" operation="_xCVX0EBKEempSqBHy1qydg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_tNyyYEBOEempSqBHy1qydg" operation="_tNnMMEBOEempSqBHy1qydg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_EQrZgDCIEemPZPXVYM39kg" name="startGame">
       <packagedElement xmi:type="uml:Collaboration" xmi:id="_EQqLYDCIEemPZPXVYM39kg" name="startGame">
@@ -187,26 +692,53 @@ switch(charcol2){&#xD;
       <ownedAttribute xmi:type="uml:Port" xmi:id="_t0lmcDuJEemdYIOBm08Mew" name="mqtt" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
         <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXMcnWEeiTgcmKwS4Zdw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Port" xmi:id="_1ngJIDuJEemdYIOBm08Mew" name="chessMove" visibility="public" type="_vvu6cDCGEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="true"/>
-      <ownedAttribute xmi:type="uml:Port" xmi:id="_DG0YgDuLEemdYIOBm08Mew" name="startup_broker" visibility="public" type="_AuwU8DuLEemdYIOBm08Mew" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_1ngJIDuJEemdYIOBm08Mew" name="BoardUpdate" visibility="public" type="_vvu6cDCGEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="true"/>
       <ownedAttribute xmi:type="uml:Port" xmi:id="__DvjoDuVEemdYIOBm08Mew" name="move_valid" visibility="public" type="_9trvoDuVEemdYIOBm08Mew" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WGWI8EA-EempSqBHy1qydg" name="Player1MoveMessage" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_0phG0EB_EemoPO4MPE9Qdg" name="tcp" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_tEiNsa1CEeeZPMea3Z4z9w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_UuSXEEtFEem8XeeLxDY_Dw" name="timer" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MxQZgGXsEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_cP6gAEtGEem8XeeLxDY_Dw" name="startup_broker" visibility="public" type="_EQqLYDCIEemPZPXVYM39kg" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_m1_AIDuKEemdYIOBm08Mew" name="Broker_sm" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_m2fWcDuKEemdYIOBm08Mew" name="Region">
           <transition xmi:type="uml:Transition" xmi:id="_m74z0DuKEemdYIOBm08Mew" name="Initial" source="_m2jA0DuKEemdYIOBm08Mew" target="_m72-oDuKEemdYIOBm08Mew">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_qOXRMDuKEemdYIOBm08Mew" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;Broker Starting up&quot;);</body>
+              <body>log.log(&quot;Player 1 broker Starting up&quot;);</body>
             </effect>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_YBn-gDuLEemdYIOBm08Mew" name="" kind="external" source="_m72-oDuKEemdYIOBm08Mew" target="_WdrfgDuLEemdYIOBm08Mew">
-            <trigger xmi:type="uml:Trigger" xmi:id="_e12rYDuLEemdYIOBm08Mew" event="_dUCTUDuLEemdYIOBm08Mew" port="_DG0YgDuLEemdYIOBm08Mew"/>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_910jgEBtEempSqBHy1qydg" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player1Broker] Connecting to MQTT instance&quot;);&#xD;
+mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Hoyman&quot;, &quot;queens&quot;);&#xD;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_nH2S4EtGEem8XeeLxDY_Dw" event="_Fk4MUDCIEemPZPXVYM39kg" port="_cP6gAEtGEem8XeeLxDY_Dw"/>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_kU3RwDuLEemdYIOBm08Mew" name="" kind="external" source="_WdrfgDuLEemdYIOBm08Mew" target="_i0564DuLEemdYIOBm08Mew">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_6DzMwEBUEempSqBHy1qydg" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player1Broker] Successfully connected to CloudMQTT Server&quot;);&#xD;
+mqtt.publish(&quot;Player1Connected&quot;,&quot;I'm Ready to Play&quot;);&#xD;
+log.log(&quot;[Player1Broker] Waiting for Player 2 to connect&quot;);&#xD;
+mqtt.subscribe(&quot;Player2Connected&quot;);&#xD;
+</body>
+            </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_o0xLkDuLEemdYIOBm08Mew" port="_t0lmcDuJEemdYIOBm08Mew">
               <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXQsnWEeiTgcmKwS4Zdw"/>
             </trigger>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_0QpZADuLEemdYIOBm08Mew" name="" kind="external" source="_WdrfgDuLEemdYIOBm08Mew" target="_xu7DIDuLEemdYIOBm08Mew">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_EXMl0EBuEempSqBHy1qydg" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;MQTT error %d&quot;, errno);</body>
+            </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_0nxfkDuLEemdYIOBm08Mew" port="_t0lmcDuJEemdYIOBm08Mew">
               <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXRMnWEeiTgcmKwS4Zdw"/>
             </trigger>
@@ -214,70 +746,94 @@ switch(charcol2){&#xD;
           <transition xmi:type="uml:Transition" xmi:id="_vmKKYDuMEemdYIOBm08Mew" name="received" kind="external" source="_i0564DuLEemdYIOBm08Mew" target="_sdJLADuMEemdYIOBm08Mew">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_fsSnUDuPEemdYIOBm08Mew" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;Player 2 connected with message %s&quot;, payload);</body>
+              <body>log.log(&quot;[Player1Broker]Player 2 connected with message %s&quot;, payload);&#xD;
+</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_zP9ioDuMEemdYIOBm08Mew" port="_t0lmcDuJEemdYIOBm08Mew">
               <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXQcnWEeiTgcmKwS4Zdw"/>
             </trigger>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_Q5X94DuVEemdYIOBm08Mew" name="" kind="external" source="_i0564DuLEemdYIOBm08Mew" target="_xu7DIDuLEemdYIOBm08Mew">
-            <trigger xmi:type="uml:Trigger" xmi:id="_RxyMkDuVEemdYIOBm08Mew" port="_t0lmcDuJEemdYIOBm08Mew">
-              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXRMnWEeiTgcmKwS4Zdw"/>
-            </trigger>
-          </transition>
           <transition xmi:type="uml:Transition" xmi:id="_PnZTcDunEemdYIOBm08Mew" name="" kind="external" source="_sdJLADuMEemdYIOBm08Mew" target="_NqVw4DunEemdYIOBm08Mew">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_l6Vs4DuuEemdYIOBm08Mew" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>mqtt.publish(&quot;Player1MoveDone&quot;,&quot;Player 1 completed move&quot;);</body>
+              <body>using namespace std;&#xD;
+log.log(&quot;[Player1Broker] Player 1 move valid, sending to Player 2...&quot;);&#xD;
+&#xD;
+//Getting validated move indexes to pass to Player 2&#xD;
+char cstr[5] = {'\0'};&#xD;
+cstr[0] = startCol + '0';&#xD;
+cstr[1] = startRow + '0';&#xD;
+cstr[2] = endCol + '0';&#xD;
+cstr[3] = endRow + '0';&#xD;
+&#xD;
+//Sending message to Player2&#xD;
+mqtt.publish(&quot;Player1MoveDone&quot;,cstr);&#xD;
+mqtt.subscribe(&quot;Player2MoveDone&quot;);&#xD;
+log.log(&quot;[Player1Broker] Waiting for Player 2 Move&quot;);</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_UCIZYDunEemdYIOBm08Mew" event="_SFTgUDunEemdYIOBm08Mew" port="__DvjoDuVEemdYIOBm08Mew"/>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_Yri0gDunEemdYIOBm08Mew" name="" kind="external" source="_sdJLADuMEemdYIOBm08Mew" target="_sdJLADuMEemdYIOBm08Mew">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_gu8DMDunEemdYIOBm08Mew" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;[Broker] Player 1 entered an invalid move, try again&quot;);</body>
+              <body>log.log(&quot;[Player1Broker] Player 1 entered an invalid move, try again&quot;);</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_eAQPYDunEemdYIOBm08Mew" event="_cvw34DunEemdYIOBm08Mew" port="__DvjoDuVEemdYIOBm08Mew"/>
           </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_F-bL4D4JEempSqBHy1qydg" name="Player 2 Move Received" kind="external" source="_NqVw4DunEemdYIOBm08Mew" target="_fW7tEEBKEempSqBHy1qydg">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_lr4jIEAtEempSqBHy1qydg" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player1Broker] Player 2 selected move: %s&quot;,payload);&#xD;
+log.log(&quot;[Player1Broker] Sending Player 2 move to update board&quot;);&#xD;
+BoardUpdate.Player2MoveMessage(strdup(payload)).send();</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_HzZvkD_BEempSqBHy1qydg" port="_t0lmcDuJEemdYIOBm08Mew">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_ImxXQcnWEeiTgcmKwS4Zdw"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_o4s-QEBKEempSqBHy1qydg" name="" kind="external" source="_fW7tEEBKEempSqBHy1qydg" target="_sdJLADuMEemdYIOBm08Mew">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_zglXYEBUEempSqBHy1qydg" name="Effect" isReentrant="false">
+              <language>C++</language>
+              <body>log.log(&quot;[Player1Broker] Board is updated, moving to Player 1 turn&quot;);</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_yqb-EEBKEempSqBHy1qydg" event="_xCrWEEBKEempSqBHy1qydg" port="_1ngJIDuJEemdYIOBm08Mew"/>
+          </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_m2jA0DuKEemdYIOBm08Mew" kind="initial"/>
-          <subvertex xmi:type="uml:State" xmi:id="_m72-oDuKEemdYIOBm08Mew" name="State1"/>
-          <subvertex xmi:type="uml:State" xmi:id="_WdrfgDuLEemdYIOBm08Mew" name="game time started">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_nUV6oDuLEemdYIOBm08Mew" name="Entry" isReentrant="false">
-              <language>C++</language>
-              <body>mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Hoyman&quot;, &quot;queens&quot;);&#xD;
-</body>
-            </entry>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_i0564DuLEemdYIOBm08Mew" name="Connected">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_rdN0gDuLEemdYIOBm08Mew" name="Entry" isReentrant="false">
-              <language>C++</language>
-              <body>log.log(&quot;[Broker] Successfully connected to CloudMQTT Server&quot;);&#xD;
-log.log(&quot;[Broker] Waiting for Player 2 to connect&quot;);&#xD;
-mqtt.subscribe(&quot;Player2Connected&quot;);</body>
-            </entry>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_xu7DIDuLEemdYIOBm08Mew" name="Error">
-            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_4jH60DuLEemdYIOBm08Mew" name="Entry" isReentrant="false">
-              <language>C++</language>
-              <body>log.log(&quot;MQTT error %d&quot;, errno);</body>
-            </entry>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_sdJLADuMEemdYIOBm08Mew" name="Player2_connected">
+          <subvertex xmi:type="uml:State" xmi:id="_m72-oDuKEemdYIOBm08Mew" name="Waiting To Start"/>
+          <subvertex xmi:type="uml:State" xmi:id="_WdrfgDuLEemdYIOBm08Mew" name="Connecting"/>
+          <subvertex xmi:type="uml:State" xmi:id="_i0564DuLEemdYIOBm08Mew" name="Wait for Player 2"/>
+          <subvertex xmi:type="uml:State" xmi:id="_xu7DIDuLEemdYIOBm08Mew" name="Error"/>
+          <subvertex xmi:type="uml:State" xmi:id="_sdJLADuMEemdYIOBm08Mew" name="Player1 Turn">
             <entry xmi:type="uml:OpaqueBehavior" xmi:id="_TlkzgDuXEemdYIOBm08Mew" name="Entry" isReentrant="false">
               <language>C++</language>
               <body>using namespace std;&#xD;
-log.log(&quot;[Broker]------------Player 1 turn:&quot;);&#xD;
+&#xD;
+//Get Player 1 start and end move&#xD;
+log.log(&quot;[Player1Broker]------------Player 1 turn:&quot;);&#xD;
 string startMove;&#xD;
 string endMove;&#xD;
 cout &lt;&lt; &quot;Player1 enter start move: &quot;;&#xD;
 getline (cin, startMove);&#xD;
 cout &lt;&lt; &quot;Player1 enter end move:  &quot;;&#xD;
 getline (cin, endMove);&#xD;
-move_valid.Player1Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
+&#xD;
+char * startMovePointer = &amp;startMove[0u];&#xD;
+char * endMovePointer = &amp;endMove[0u];&#xD;
+&#xD;
+//Validate Player 1 moves&#xD;
+move_valid.Player1Move(startMovePointer,endMovePointer).send();&#xD;
+</body>
             </entry>
           </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_NqVw4DunEemdYIOBm08Mew" name="Player1 Move Done"/>
+          <subvertex xmi:type="uml:State" xmi:id="_NqVw4DunEemdYIOBm08Mew" name="Player2 Turn"/>
+          <subvertex xmi:type="uml:State" xmi:id="_fW7tEEBKEempSqBHy1qydg" name="Update Board"/>
         </region>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ookxMEBCEempSqBHy1qydg">
+        <language>C++</language>
+        <body>&#xD;
+    return cstr;&#xD;
+</body>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_AvVjwDuLEemdYIOBm08Mew" name="startup_broker">
@@ -311,7 +867,20 @@ move_valid.Player1Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_9tydUDuVEemdYIOBm08Mew" name="move_valid~">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_SFS5QDunEemdYIOBm08Mew" name="Player1MoveValid"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_SFS5QDunEemdYIOBm08Mew" name="Player1MoveValid">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xC1IEEA_EempSqBHy1qydg" name="startCol">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_yvAWAEA_EempSqBHy1qydg" name="startRow">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_z0ORoEA_EempSqBHy1qydg" name="endCol">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_z7nTEEA_EempSqBHy1qydg" name="endRow">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_cvwQ0DunEemdYIOBm08Mew" name="Player1MoveInvalid"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Usage" xmi:id="_9t1goDuVEemdYIOBm08Mew" client="_9trvoDuVEemdYIOBm08Mew" supplier="_9tydUDuVEemdYIOBm08Mew"/>
@@ -346,7 +915,6 @@ move_valid.Player1Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
   <UMLRTStateMachines:RTState xmi:id="_00MoYDAOEemPZPXVYM39kg" base_State="_00HI0DAOEemPZPXVYM39kg"/>
   <UMLRTStateMachines:RTRegion xmi:id="_00e8QDAOEemPZPXVYM39kg" base_Region="_0zZXIDAOEemPZPXVYM39kg"/>
   <UMLRTStateMachines:RTStateMachine xmi:id="_00-EcDAOEemPZPXVYM39kg" base_StateMachine="_0yk3wDAOEemPZPXVYM39kg"/>
-  <UMLRealTime:Capsule xmi:id="_60X6wDAREemPZPXVYM39kg" base_Class="_60MUkDAREemPZPXVYM39kg"/>
   <UMLRealTime:RTPort xmi:id="_ONlY4DAXEemPZPXVYM39kg" isPublish="false" isWired="false" base_Port="_ONiVkDAXEemPZPXVYM39kg"/>
   <RTCppProperties:CapsuleProperties xmi:id="_LDA9gDAbEemPZPXVYM39kg" headerPreface="#include &quot;umlrtmain.hh&quot;" implementationPreface="#include &lt;iostream>&#xD;&#xA;#include &lt;string>" base_Class="_zAxi8DAOEemPZPXVYM39kg" publicDeclarations=""/>
   <UMLRealTime:Capsule xmi:id="_E_kXQDBxEemPZPXVYM39kg" base_Class="_E_LVsDBxEemPZPXVYM39kg"/>
@@ -366,11 +934,8 @@ move_valid.Player1Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
   <UMLRealTime:RTMessageSet xmi:id="_EQxgIDCIEemPZPXVYM39kg" base_Interface="_EQwSATCIEemPZPXVYM39kg" rtMsgKind="out"/>
   <UMLRealTime:RTMessageSet xmi:id="_EQz8YDCIEemPZPXVYM39kg" base_Interface="_EQyuQTCIEemPZPXVYM39kg" rtMsgKind="inOut"/>
   <UMLRealTime:Protocol xmi:id="_EQ1KgDCIEemPZPXVYM39kg" base_Collaboration="_EQqLYDCIEemPZPXVYM39kg"/>
-  <RTCppProperties:CapsuleProperties xmi:id="_ZH4R4DCIEemPZPXVYM39kg" headerPreface="" implementationPreface="#include &lt;iostream>&#xD;&#xA;#include &lt;string>&#xD;&#xA;" base_Class="_E_LVsDBxEemPZPXVYM39kg" privateDeclarations="int ChessBoard[8][8] = {&#xD;&#xA;    {'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},&#xD;&#xA;    {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},&#xD;&#xA;    {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'}, };&#xD;&#xA;" publicDeclarations=""/>
+  <RTCppProperties:CapsuleProperties xmi:id="_ZH4R4DCIEemPZPXVYM39kg" headerPreface="" implementationPreface="#include &lt;iostream>&#xD;&#xA;#include &lt;string>&#xD;&#xA;#include &lt;cstdlib> &#xD;&#xA;#include &lt;ctype.h>&#xD;&#xA;" base_Class="_E_LVsDBxEemPZPXVYM39kg" privateDeclarations="int ChessBoard[8][8] = {&#xD;&#xA;    {-2, -3, -4, -5, -6, -4, -3, -2},&#xD;&#xA;    {-1, -1, -1, -1, -1, -1, -1, -1},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {0, 0, 0, 0, 0, 0, 0,0},&#xD;&#xA;    {1, 1,1,1,1,1,1,1},&#xD;&#xA;    {2, 3, 4, 5, 6, 4, 3, 2}, };&#xD;&#xA;" publicDeclarations=""/>
   <UMLRealTime:RTPort xmi:id="_dAlBwDCIEemPZPXVYM39kg" isPublish="false" isWired="true" base_Port="_c_wiYDCIEemPZPXVYM39kg"/>
-  <UMLRealTime:RTPort xmi:id="_gFYPgDCIEemPZPXVYM39kg" isPublish="false" isWired="true" base_Port="_gFVMMDCIEemPZPXVYM39kg"/>
-  <UMLRealTime:RTConnector xmi:id="_jcHh0jCIEemPZPXVYM39kg" base_Connector="_jcGTsDCIEemPZPXVYM39kg"/>
-  <UMLRTStateMachines:RTState xmi:id="_43wLoDsKEemdYIOBm08Mew" base_State="_43uWcDsKEemdYIOBm08Mew"/>
   <UMLRealTime:RTPort xmi:id="_GQLaUDuEEemdYIOBm08Mew" isPublish="false" isWired="false" base_Port="_GQKMMDuEEemdYIOBm08Mew"/>
   <UMLRealTime:Capsule xmi:id="_pLvMADuJEemdYIOBm08Mew" base_Class="_pC8cYDuJEemdYIOBm08Mew"/>
   <UMLRealTime:CapsulePart xmi:id="_qrMzoDuJEemdYIOBm08Mew" base_Property="_qrDpsDuJEemdYIOBm08Mew"/>
@@ -388,9 +953,6 @@ move_valid.Player1Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
   <UMLRealTime:RTMessageSet xmi:id="_Avc4gDuLEemdYIOBm08Mew" base_Interface="_AvbqYDuLEemdYIOBm08Mew" rtMsgKind="out"/>
   <UMLRealTime:RTMessageSet xmi:id="_Avgi4DuLEemdYIOBm08Mew" base_Interface="_AvetsDuLEemdYIOBm08Mew" rtMsgKind="inOut"/>
   <UMLRealTime:Protocol xmi:id="_Avi_ITuLEemdYIOBm08Mew" base_Collaboration="_AuwU8DuLEemdYIOBm08Mew"/>
-  <UMLRealTime:RTPort xmi:id="_DG2NsDuLEemdYIOBm08Mew" isPublish="false" isWired="true" base_Port="_DG0YgDuLEemdYIOBm08Mew"/>
-  <UMLRealTime:RTPort xmi:id="_LAWgkDuLEemdYIOBm08Mew" isPublish="false" isWired="true" base_Port="_LAUrYDuLEemdYIOBm08Mew"/>
-  <UMLRealTime:RTConnector xmi:id="_RLBTEjuLEemdYIOBm08Mew" base_Connector="_RLAsADuLEemdYIOBm08Mew"/>
   <UMLRTStateMachines:RTState xmi:id="_WdstoDuLEemdYIOBm08Mew" base_State="_WdrfgDuLEemdYIOBm08Mew"/>
   <UMLRTStateMachines:RTState xmi:id="_i07JADuLEemdYIOBm08Mew" base_State="_i0564DuLEemdYIOBm08Mew"/>
   <UMLRTStateMachines:RTState xmi:id="_xu84UDuLEemdYIOBm08Mew" base_State="_xu7DIDuLEemdYIOBm08Mew"/>
@@ -406,4 +968,12 @@ move_valid.Player1Move(&amp;startMove[0u],&amp;endMove[0u]).send();</body>
   <UMLRTStateMachines:RTState xmi:id="_8ZCJgDuYEemdYIOBm08Mew" base_State="_8ZA7YDuYEemdYIOBm08Mew"/>
   <UMLRealTime:RTConnector xmi:id="__OiXAjuYEemdYIOBm08Mew" base_Connector="__OhI4DuYEemdYIOBm08Mew"/>
   <UMLRTStateMachines:RTState xmi:id="_NqXmEDunEemdYIOBm08Mew" base_State="_NqVw4DunEemdYIOBm08Mew"/>
+  <UMLRTStateMachines:RTPseudostate xmi:id="_LC5k8DyhEemdYIOBm08Mew" base_Pseudostate="_LBAHgDyhEemdYIOBm08Mew"/>
+  <UMLRTStateMachines:RTState xmi:id="_fW-JUEBKEempSqBHy1qydg" base_State="_fW7tEEBKEempSqBHy1qydg"/>
+  <UMLRealTime:RTPort xmi:id="_0tiEIEB_EemoPO4MPE9Qdg" isPublish="false" isWired="false" base_Port="_0phG0EB_EemoPO4MPE9Qdg"/>
+  <UMLRealTime:RTPort xmi:id="_UubhAEtFEem8XeeLxDY_Dw" isPublish="false" isWired="false" base_Port="_UuSXEEtFEem8XeeLxDY_Dw"/>
+  <UMLRealTime:RTPort xmi:id="_cP8VMEtGEem8XeeLxDY_Dw" isPublish="false" isWired="true" base_Port="_cP6gAEtGEem8XeeLxDY_Dw"/>
+  <UMLRealTime:RTConnector xmi:id="_lGBlEktGEem8XeeLxDY_Dw" base_Connector="_lF-hwEtGEem8XeeLxDY_Dw"/>
+  <UMLRTStateMachines:RTState xmi:id="_s-aSEEtQEem8XeeLxDY_Dw" base_State="_s-Yc4EtQEem8XeeLxDY_Dw"/>
+  <UMLRTStateMachines:RTPseudostate xmi:id="_Cdx9sEtREem8XeeLxDY_Dw" base_Pseudostate="_CdwvkEtREem8XeeLxDY_Dw"/>
 </xmi:XMI>
