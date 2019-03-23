@@ -53,6 +53,7 @@ public class Connector {
 						break;
 					case MqttManager.Player2Connected:
 						mGame.setPlayerStatus(0, "It is Your Turn");
+						mGame.setPlayerStatus(1, "");
 						break;
 					case MqttManager.Player1MoveDone:
 						mGame.setPlayerStatus(1, "It is Your Turn");
