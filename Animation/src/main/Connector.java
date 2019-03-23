@@ -52,7 +52,7 @@ public class Connector {
 						mGame.setPlayerStatus(0, "Ready to Play");
 						break;
 					case MqttManager.Player2Connected:
-						mGame.setPlayerStatus(1, "Ready to Play");
+						mGame.setPlayerStatus(0, "It is Your Turn");
 						break;
 					case MqttManager.Player1MoveDone:
 						mGame.setPlayerStatus(1, "It is Your Turn");
@@ -83,10 +83,10 @@ public class Connector {
 				
 				if(coordinates == "") return;
 				int startRow, startCol, endRow, endCol;
-				startRow = Character.getNumericValue(coordinates.charAt(0));
-	            startCol = Character.getNumericValue(coordinates.charAt(1));
-	            endRow = Character.getNumericValue(coordinates.charAt(2));
-	            endCol = Character.getNumericValue(coordinates.charAt(3));
+				startCol = Character.getNumericValue(coordinates.charAt(0));
+	            startRow = Character.getNumericValue(coordinates.charAt(1));
+	            endCol = Character.getNumericValue(coordinates.charAt(2));
+	            endRow = Character.getNumericValue(coordinates.charAt(3));
 				mGame.move_piece(startRow, startCol, endRow, endCol);
 			}
 

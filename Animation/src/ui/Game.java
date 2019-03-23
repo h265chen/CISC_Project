@@ -219,7 +219,7 @@ public class Game {
 			cb.playerARst.setForeground(Color.BLUE);
 		} else {
 			cb.playerBRst.setText("<html>"+ status +"</html>");
-			cb.playerARst.setForeground(Color.BLUE);
+			cb.playerBRst.setForeground(Color.BLUE);
 		}
 
 	}
