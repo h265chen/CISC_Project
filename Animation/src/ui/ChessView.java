@@ -6,6 +6,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
@@ -39,6 +41,14 @@ class ChessView extends JFrame{
     
 	public ChessView() {
 		initializeGui();
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("WindowClosingDemo.windowClosing");
+                System.exit(0);
+            }
+		});
+		
 		
 	}
 	public final void initializeGui() {
