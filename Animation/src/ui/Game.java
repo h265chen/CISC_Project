@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class Game {
-	private JButton add = new JButton("Add");
 	private JButton printBoard = new JButton("Print Board");
     final String dir = System.getProperty("user.dir");
 	private ChessView cb = new ChessView();
@@ -24,7 +23,6 @@ public class Game {
 		initializeBoard();
 		setButtons();
 		setPieces();
-		createAddEventListener();
 		createDeleteEventListener();
 		startGame();
 	}
@@ -153,15 +151,6 @@ public class Game {
   		}
 	}
 	
-	private void createAddEventListener() {
-	    add.addActionListener(new ActionListener()
-	    {
-	      public void actionPerformed(ActionEvent e)
-	      {
-	    	  move_piece(0,2,0,3);
-	      }
-	    });
-	}
 	
 	private void createDeleteEventListener() {
 	    printBoard.addActionListener(new ActionListener()
@@ -180,7 +169,6 @@ public class Game {
 	}
 	
 	private void setButtons() {
-		cb.tools.add(add);
 		cb.tools.add(printBoard);
 	}
 	

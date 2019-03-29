@@ -52,16 +52,16 @@ public class Connector {
 						mGame.setPlayerStatus(0, "Ready to Play");
 						break;
 					case MqttManager.Player2Connected:
-						mGame.setPlayerStatus(0, "It is Your Turn");
+						mGame.setPlayerStatus(0, "Player 1 turn");
 						mGame.setPlayerStatus(1, "");
 						break;
 					case MqttManager.Player1MoveDone:
-						mGame.setPlayerStatus(1, "It is Your Turn");
+						mGame.setPlayerStatus(1, "Player 2 turn");
 						mGame.setPlayerStatus(0, "");
 						coordinates  = message.toString();
 						break;
 					case MqttManager.Player2MoveDone:	
-						mGame.setPlayerStatus(0, "It is Your Turn");
+						mGame.setPlayerStatus(0, "Player 1 turn");
 						mGame.setPlayerStatus(1, "");
 						coordinates  = message.toString();
 						break;
@@ -69,11 +69,11 @@ public class Connector {
 						//0 means A wins
 						// 1 means B wins
 						if(message.toString() == "1") {
-							mGame.showHint("PlayerA Wins the Game");
+							mGame.showHint("Player 1 Wins the Game!");
 							mGame.setPlayerStatus(0, "WIN");
 							mGame.setPlayerStatus(1, "LOSE");
 						}else {
-							mGame.showHint("PlayerB Wins the Game");
+							mGame.showHint("Player 2 Wins the Game!");
 							mGame.setPlayerStatus(0, "LOSE");
 							mGame.setPlayerStatus(1, "WIN");
 						}
