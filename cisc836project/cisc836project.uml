@@ -83,6 +83,14 @@ startGame.start().send();&#xD;
         <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
         <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_yyG-EVYcEemylZj3QAPYaQ" value="0"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Tc0pgFZZEem8dNtoe1jjAQ" name="castleAllowed" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_cSoMkFZZEem8dNtoe1jjAQ" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BxpLwFZaEem8dNtoe1jjAQ" name="castleCalled" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_EkTgoFZaEem8dNtoe1jjAQ"/>
+      </ownedAttribute>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_zRBacDCHEemPZPXVYM39kg" name="Board_SM" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_zRJWQDCHEemPZPXVYM39kg" name="Region">
           <transition xmi:type="uml:Transition" xmi:id="_zRPc4DCHEemPZPXVYM39kg" name="Initial" source="_zRKkYDCHEemPZPXVYM39kg" target="_zRNAoDCHEemPZPXVYM39kg">
@@ -175,15 +183,11 @@ move_valid.Player1MoveValid(startCol, startRow, endCol, endRow,true).send();&#xD
               <language>C++</language>
               <body>updateBoard(startCol, startRow, endCol, endRow);&#xD;
 &#xD;
-//Update the Kings position&#xD;
-if(ChessBoard[startRow][startCol] == -6){&#xD;
-	kingX = endRow;&#xD;
-	kingY = endCol;&#xD;
-}&#xD;
 //If the pawn reaches the other end of board, promote it to Queen&#xD;
-else if(ChessBoard[endRow][endCol] == -1 &amp;&amp; endRow == 7){&#xD;
+if(ChessBoard[endRow][endCol] == -1 &amp;&amp; endRow == 7){&#xD;
 	ChessBoard[endRow][endCol] = -5;&#xD;
 }&#xD;
+&#xD;
 move_valid.Player1MoveValid(startCol, startRow, endCol, endRow,false).send();&#xD;
 printBoard();</body>
             </effect>
@@ -359,6 +363,12 @@ if(ChessBoard[startRow][startCol] == -5){&#xD;
     //Player selected the King&#xD;
 if(ChessBoard[startRow][startCol] == -6){&#xD;
     	log.log(&quot;Player 1 selected the King&quot;);&#xD;
+	//Castling&#xD;
+		if(castleAllowed &amp;&amp; ChessBoard[endRow][endCol] == -2){&#xD;
+			log.log(&quot;[Board] Player 1 Castling]&quot;);&#xD;
+			castleAllowed = false;&#xD;
+			castleCalled = true;&#xD;
+		}&#xD;
     	//Moving one step in the same column&#xD;
     		if(startCol == endCol &amp;&amp; abs(startRow - endRow) ==1){&#xD;
     			return moveValid = true;&#xD;
@@ -617,6 +627,10 @@ else if(piece == -5){&#xD;
 }&#xD;
 </body>
       </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_091toFZPEem8dNtoe1jjAQ" specification="_SrXrIFYcEemylZj3QAPYaQ">
+        <language>C++</language>
+        <body></body>
+      </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_MhQL4DF1Eem4RqP6_nGyvA" name="GetCol" concurrency="guarded" method="_WkIlEDGAEem4RqP6_nGyvA">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qFNwUDGGEem6scIjjy_ZLA" name="Start">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -677,7 +691,7 @@ else if(piece == -5){&#xD;
           <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_SrXrIFYcEemylZj3QAPYaQ" name="kingCheck" concurrency="guarded"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_SrXrIFYcEemylZj3QAPYaQ" name="kingCheck" concurrency="guarded" method="_091toFZPEem8dNtoe1jjAQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_vvzL4DCGEemPZPXVYM39kg" name="BoardUpdate">
       <packagedElement xmi:type="uml:Collaboration" xmi:id="_vvu6cDCGEemPZPXVYM39kg" name="BoardUpdate">
