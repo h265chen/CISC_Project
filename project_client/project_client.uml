@@ -329,6 +329,10 @@ printBoard();</body>
               <language>C++</language>
               <body>log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);&#xD;
 updateBoard(startCol,startRow,endCol,endRow);&#xD;
+//If the pawn reaches the end of the board, promote it to Queen&#xD;
+if(ChessBoard[endRow][endCol] == 1 &amp;&amp; endRow == 0){&#xD;
+	ChessBoard[endRow][endCol] = 5;&#xD;
+}&#xD;
 move_valid.Player2MoveValid(startCol, startRow, endCol, endRow,false).send();&#xD;
 printBoard();</body>
             </effect>
