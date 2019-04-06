@@ -775,9 +775,9 @@ mqtt.connect(&quot;m16.cloudmqtt.com&quot;, 15723, &quot;Hoyman&quot;, &quot;que
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_6DzMwEBUEempSqBHy1qydg" name="Effect" isReentrant="false">
               <language>C++</language>
               <body>log.log(&quot;[Player1Broker] Successfully connected to CloudMQTT Server&quot;);&#xD;
-mqtt.publish(&quot;Player1Connected&quot;,&quot;I'm Ready to Play&quot;);&#xD;
+mqtt.publish(&quot;PlayerConnected&quot;,&quot;Player1Connected&quot;);&#xD;
 log.log(&quot;[Player1Broker] Waiting for Player 2 to connect&quot;);&#xD;
-mqtt.subscribe(&quot;Player2Connected&quot;);&#xD;
+mqtt.subscribe(&quot;PlayerConnected&quot;);&#xD;
 </body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_o0xLkDuLEemdYIOBm08Mew" port="_t0lmcDuJEemdYIOBm08Mew">

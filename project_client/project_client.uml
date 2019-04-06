@@ -81,7 +81,7 @@ startGame.start().send();</body>
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_x3AtkD-8EemACYDE-qKd5g" name="Effect" isReentrant="false">
               <language>C++</language>
               <body>log.log(&quot;[Player2Broker] Connected to Server!&quot;);&#xD;
-mqtt.publish(&quot;Player2Connected&quot;,&quot;I'm Ready to Play&quot;);&#xD;
+mqtt.publish(&quot;PlayerConnected&quot;,&quot;Player2Connected&quot;);&#xD;
 log.log(&quot;[Player2Broker] Waiting for Player 1 move&quot;);&#xD;
 mqtt.subscribe(&quot;Player1MoveDone&quot;);&#xD;
 &#xD;
@@ -167,15 +167,17 @@ mqtt.subscribe(&quot;Player1MoveDone&quot;);&#xD;
             </ownedRule>
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_8t8E0E2nEemGCdFy2wiJyg" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;[Player2Broker] Game Over, Player 2 Wins&quot;);&#xD;
-log.log(&quot;[Player2Broker] Publishing 1 to PlayerWins&quot;);&#xD;
-mqtt.publish(&quot;PlayerWins&quot;,&quot;1&quot;);</body>
+              <body>    log.log(&quot;[Player2Broker] Publishing 1 to PlayerWins&quot;);
+    mqtt.publish(&quot;PlayerWins&quot;,&quot;1&quot;);
+    log.log(&quot;[Player2Broker] Game Over, Player 2 Wins&quot;);
+</body>
             </effect>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_19lioE24EemGCdFy2wiJyg" name="" kind="external" source="_nlzv0EBGEemqJPrZwKkwWQ" target="_766pQE2jEemGCdFy2wiJyg">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_8efq4E24EemGCdFy2wiJyg" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;[Player2Broker] Player 1 Wins, Game Over&quot;);</body>
+              <body>    log.log(&quot;[Player2Broker] Game Over, Player 1 Wins&quot;);
+</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_2aEqUE24EemGCdFy2wiJyg" event="_sQ8eME24EemGCdFy2wiJyg" port="_KxGk8E2lEemGCdFy2wiJyg"/>
           </transition>
@@ -327,14 +329,11 @@ printBoard();</body>
           <transition xmi:type="uml:Transition" xmi:id="_wiHVcEtoEemM1b60lyH_SQ" kind="external" source="_pjunAEtoEemM1b60lyH_SQ" target="_uO5lID_BEemACYDE-qKd5g">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_zL8ecEtoEemM1b60lyH_SQ" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);&#xD;
-updateBoard(startCol,startRow,endCol,endRow);&#xD;
-//If the pawn reaches the end of the board, promote it to Queen&#xD;
-if(ChessBoard[endRow][endCol] == 1 &amp;&amp; endRow == 0){&#xD;
-	ChessBoard[endRow][endCol] = 5;&#xD;
-}&#xD;
-move_valid.Player2MoveValid(startCol, startRow, endCol, endRow,false).send();&#xD;
-printBoard();</body>
+              <body>    log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);
+    updateBoard(startCol,startRow,endCol,endRow);
+    move_valid.Player2MoveValid(startCol, startRow, endCol, endRow,false).send();
+    printBoard();
+</body>
             </effect>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_x50IMEtoEemM1b60lyH_SQ" guard="_7spUMEtoEemM1b60lyH_SQ" kind="external" source="_pjunAEtoEemM1b60lyH_SQ" target="_GvXVYEtWEemM1b60lyH_SQ">
