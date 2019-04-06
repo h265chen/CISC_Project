@@ -30,8 +30,9 @@ public class MqttManager  {
 	MqttCallback mCallback;
 	IMqttActionListener mActionListener;
 
-	public static final String Player2Connected = "Player2Connected";
-	public static final String Player1Connected = "Player1Connected";
+	//public static final String Player2Connected = "Player2Connected";
+	//public static final String Player1Connected = "Player1Connected";
+	public static final String PlayerConnected = "PlayerConnected";
 	public static final String Player2MoveDone = "Player2MoveDone";
 	public static final String Player1MoveDone = "Player1MoveDone";
 	public static final String PlayerWins = "PlayerWins";
@@ -39,9 +40,9 @@ public class MqttManager  {
 	
 	boolean quietMode 	= false;
 	String action 		= "publish";
-	public  String[] mTopics  = new String[] {Player2Connected,Player1Connected,Player2MoveDone,Player1MoveDone,PlayerWins};
+	public  String[] mTopics  = new String[] {PlayerConnected,Player2MoveDone,Player1MoveDone,PlayerWins};
 	String message 		= "Message from async callback Paho MQTTv3 Java client sample";
-	int[] mQos 			=  new int[] {2,2,2,2,2};
+	int[] mQos 			=  new int[] {2,2,2,2};
 	String broker 		= "m16.cloudmqtt.com";
 	int port 			= 15723;
 	String clientId 	= "";

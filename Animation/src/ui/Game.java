@@ -41,84 +41,84 @@ public class Game {
 		//Add Player 2 pawns
 		Piece_Image piece1 = new Piece_Image();
 		for(int i = 0; i < 8; i ++) {
-			JLabel piece_label = piece1.get_label("pawn_p2");
-			Piece pawn = new Piece(i,1,"pawn_p2");
+			JLabel piece_label = piece1.get_label("pawn_p1");
+			Piece pawn = new Piece(i,1,"pawn_p1");
 			p_array[i][1] = pawn;
 			board_square = cb.squares[i][1];
 			board_square.add(piece_label);
 		}
 		//Add player 1 pawns
 		for(int i = 0; i < 8; i ++) {
-			JLabel piece_label = piece1.get_label("pawn_p1");
-			Piece pawn = new Piece(i,6,"pawn_p1");
+			JLabel piece_label = piece1.get_label("pawn_p2");
+			Piece pawn = new Piece(i,6,"pawn_p2");
 			p_array[i][6] = pawn;
 			board_square = cb.squares[i][6];
 			board_square.add(piece_label);
 		}
 		
-		p_array[0][7] = new Piece(0,7,"rook_p1");
+		p_array[0][7] = new Piece(0,7,"rook_p2");
 		board_square = cb.squares[0][7];
-		board_square.add(piece1.get_label("rook_p1"));
+		board_square.add(piece1.get_label("rook_p2"));
 		
-		p_array[7][7] = new Piece(7,7,"rook_p1");
+		p_array[7][7] = new Piece(7,7,"rook_p2");
 		board_square = cb.squares[7][7];
-		board_square.add(piece1.get_label("rook_p1"));
+		board_square.add(piece1.get_label("rook_p2"));
 		
-		p_array[1][7] = new Piece(1,7,"knight_p1");
+		p_array[1][7] = new Piece(1,7,"knight_p2");
 		board_square = cb.squares[1][7];
-		board_square.add(piece1.get_label("knight_p1"));
+		board_square.add(piece1.get_label("knight_p2"));
 		
-		p_array[6][7] = new Piece(6,7,"knight_p1");
+		p_array[6][7] = new Piece(6,7,"knight_p2");
 		board_square = cb.squares[6][7];
-		board_square.add(piece1.get_label("knight_p1"));
+		board_square.add(piece1.get_label("knight_p2"));
 		
-		p_array[2][7] = new Piece(2,7,"bishop_p1");
+		p_array[2][7] = new Piece(2,7,"bishop_p2");
 		board_square = cb.squares[2][7];
-		board_square.add(piece1.get_label("bishop_p1"));
+		board_square.add(piece1.get_label("bishop_p2"));
 		
-		p_array[5][7] = new Piece(5,7,"bishop_p1");
+		p_array[5][7] = new Piece(5,7,"bishop_p2");
 		board_square = cb.squares[5][7];
-		board_square.add(piece1.get_label("bishop_p1"));
+		board_square.add(piece1.get_label("bishop_p2"));
 
-		p_array[3][7] = new Piece(3,7,"queen_p1");
+		p_array[3][7] = new Piece(3,7,"queen_p2");
 		board_square = cb.squares[3][7];
-		board_square.add(piece1.get_label("queen_p1"));
-		
-		p_array[4][7] = new Piece(4,7,"king_p1");
-		board_square = cb.squares[4][7];
-		board_square.add(piece1.get_label("king_p1"));
-		
-		p_array[0][0] = new Piece(0,0,"rook_p2");
-		board_square = cb.squares[0][0];
-		board_square.add(piece1.get_label("rook_p2"));
-		
-		p_array[7][0] = new Piece(7,0,"rook_p2");
-		board_square = cb.squares[7][0];
-		board_square.add(piece1.get_label("rook_p2"));
-		
-		p_array[1][0] = new Piece(1,0,"knight_p2");
-		board_square = cb.squares[1][0];
-		board_square.add(piece1.get_label("knight_p2"));
-		
-		p_array[6][0] = new Piece(6,0,"knight_p2");
-		board_square = cb.squares[6][0];
-		board_square.add(piece1.get_label("knight_p2"));
-		
-		p_array[2][0] = new Piece(2,0,"bishop_p2");
-		board_square = cb.squares[2][0];
-		board_square.add(piece1.get_label("bishop_p2"));
-		
-		p_array[5][0] = new Piece(5,0,"bishop_p2");
-		board_square = cb.squares[5][0];
-		board_square.add(piece1.get_label("bishop_p2"));
-		
-		p_array[3][0] = new Piece(3,0,"queen_p2");
-		board_square = cb.squares[3][0];
 		board_square.add(piece1.get_label("queen_p2"));
 		
-		p_array[4][0] = new Piece(4,0,"king_p2");
-		board_square = cb.squares[4][0];
+		p_array[4][7] = new Piece(4,7,"king_p2");
+		board_square = cb.squares[4][7];
 		board_square.add(piece1.get_label("king_p2"));
+		
+		p_array[0][0] = new Piece(0,0,"rook_p1");
+		board_square = cb.squares[0][0];
+		board_square.add(piece1.get_label("rook_p1"));
+		
+		p_array[7][0] = new Piece(7,0,"rook_p1");
+		board_square = cb.squares[7][0];
+		board_square.add(piece1.get_label("rook_p1"));
+		
+		p_array[1][0] = new Piece(1,0,"knight_p1");
+		board_square = cb.squares[1][0];
+		board_square.add(piece1.get_label("knight_p1"));
+		
+		p_array[6][0] = new Piece(6,0,"knight_p1");
+		board_square = cb.squares[6][0];
+		board_square.add(piece1.get_label("knight_p1"));
+		
+		p_array[2][0] = new Piece(2,0,"bishop_p1");
+		board_square = cb.squares[2][0];
+		board_square.add(piece1.get_label("bishop_p1"));
+		
+		p_array[5][0] = new Piece(5,0,"bishop_p1");
+		board_square = cb.squares[5][0];
+		board_square.add(piece1.get_label("bishop_p1"));
+		
+		p_array[3][0] = new Piece(3,0,"queen_p1");
+		board_square = cb.squares[3][0];
+		board_square.add(piece1.get_label("queen_p1"));
+		
+		p_array[4][0] = new Piece(4,0,"king_p1");
+		board_square = cb.squares[4][0];
+		board_square.add(piece1.get_label("king_p1"));
 	
 	}
 	
@@ -127,6 +127,15 @@ public class Game {
 		Piece end_p = p_array[endCol][endRow];
 		String piece_type = start_p.get_piece_type();
 		Piece_Image pi_new= new Piece_Image();
+		
+		if(piece_type == "pawn_p1" && endRow == 7) {
+			piece_type = "queen_p1";
+		}
+		else if(piece_type == "pawn_p2" && endRow == 0) {
+			piece_type = "queen_p2";
+			
+		}
+		
 		JLabel pi_newLabel = pi_new.get_label(piece_type);
 		if(end_p.is_occupied()) {
 			delete_piece(endRow,endCol);

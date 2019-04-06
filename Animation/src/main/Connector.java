@@ -48,12 +48,16 @@ public class Connector {
 		                           "  QoS:\t" + message.getQos());
 				String coordinates = "";
 				switch (topic){
-					case MqttManager.Player1Connected:
-						mGame.setPlayerStatus(0, "Ready to Play");
-						break;
-					case MqttManager.Player2Connected:
-						mGame.setPlayerStatus(0, "Player 1 turn");
-						mGame.setPlayerStatus(1, "");
+					case MqttManager.PlayerConnected:
+						//Player 1 Connected
+						String msg = message.toString();
+						System.out.println(message.toString());
+						if(msg.equals("Player1Connected")) {
+							mGame.setPlayerStatus(0,"Player 1 Connected");
+						}else  {
+							mGame.setPlayerStatus(1, "Player 2 Connected");
+							mGame.setPlayerStatus(0, "Player 1 turn");
+						}
 						break;
 					case MqttManager.Player1MoveDone:
 						mGame.setPlayerStatus(1, "Player 2 turn");
