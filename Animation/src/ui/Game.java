@@ -122,6 +122,32 @@ public class Game {
 	
 	}
 	
+	public void castle_player1() {
+		System.out.println("Castle Player 1 called");
+		Piece king = p_array[4][0];
+		Piece rook = p_array[0][0];
+		
+		String king_piece = king.get_piece_type();
+		String rook_piece = rook.get_piece_type();
+		
+		Piece_Image king_img = new Piece_Image();
+		Piece_Image rook_img = new Piece_Image();
+		
+		JLabel king_newlabel = king_img.get_label(king_piece);
+		JLabel rook_newlabel = rook_img.get_label(rook_piece);
+		
+		p_array[4][0] = new Piece(4,0,"empty");
+		p_array[0][0] = new Piece(0,0,"empty");
+		p_array[2][0] =new Piece(2,0,rook_piece);
+		p_array[1][0] = new Piece(1,0,king_piece);
+		cb.squares[2][0].add(rook_newlabel);
+		cb.squares[2][0].revalidate();
+		cb.squares[1][0].add(king_newlabel);
+		cb.squares[1][0].revalidate();
+		delete_piece(0,4);
+		delete_piece(0,0);
+		cb.validate();
+	}
 	public void move_piece(int startRow,int startCol,int endRow, int endCol) {
 		Piece start_p = p_array[startCol][startRow];
 		Piece end_p = p_array[endCol][endRow];

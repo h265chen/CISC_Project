@@ -47,22 +47,36 @@ public class Connector {
 		                           "  Message:\t" + new String(message.getPayload()) +
 		                           "  QoS:\t" + message.getQos());
 				String coordinates = "";
+				boolean castleCalled = false;
+				String payload = message.toString();
 				switch (topic){
 					case MqttManager.PlayerConnected:
 						//Player 1 Connected
+<<<<<<< HEAD
+						if(message.toString().equals("Player1Connected")) {
+							mGame.setPlayerStatus(0,"Player 1 Connected");
+						}else{
+=======
 						String msg = message.toString();
 						System.out.println(message.toString());
 						if(msg.equals("Player1Connected")) {
 							mGame.setPlayerStatus(0,"Player 1 Connected");
 						}else  {
+>>>>>>> ecb030ec60da9534a874b0ae5801121e6b1a2478
 							mGame.setPlayerStatus(1, "Player 2 Connected");
 							mGame.setPlayerStatus(0, "Player 1 turn");
 						}
 						break;
 					case MqttManager.Player1MoveDone:
+						if(payload.equals("p1_castle")) {
+							castleCalled = true;
+						}
+						else {
+							coordinates  = message.toString();
+						}
 						mGame.setPlayerStatus(1, "Player 2 turn");
 						mGame.setPlayerStatus(0, "");
-						coordinates  = message.toString();
+						
 						break;
 					case MqttManager.Player2MoveDone:	
 						mGame.setPlayerStatus(0, "Player 1 turn");
@@ -86,13 +100,18 @@ public class Connector {
 							break;
 				}
 				
-				if(coordinates == "") return;
-				int startRow, startCol, endRow, endCol;
-				startCol = Character.getNumericValue(coordinates.charAt(0));
-	            startRow = Character.getNumericValue(coordinates.charAt(1));
-	            endCol = Character.getNumericValue(coordinates.charAt(2));
-	            endRow = Character.getNumericValue(coordinates.charAt(3));
-				mGame.move_piece(startRow, startCol, endRow, endCol);
+				if(coordinates == "" && !castleCalled) return;
+				else if(!castleCalled) {
+					int startRow, startCol, endRow, endCol;
+					startCol = Character.getNumericValue(coordinates.charAt(0));
+		            startRow = Character.getNumericValue(coordinates.charAt(1));
+		            endCol = Character.getNumericValue(coordinates.charAt(2));
+		            endRow = Character.getNumericValue(coordinates.charAt(3));
+					mGame.move_piece(startRow, startCol, endRow, endCol);
+				}
+				else {
+					mGame.castle_player1();
+				}
 			}
 
 			@Override
