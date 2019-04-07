@@ -105,8 +105,10 @@ mqtt.subscribe(&quot;Player1MoveDone&quot;);&#xD;
               <language>C++</language>
               <body>log.log(&quot;[Player2Broker] Player 1 selected move: %s&quot;, payload);&#xD;
 log.log(&quot;[Player2Broker] Sending Player 1 to board update&quot;);&#xD;
+if(strcmp(payload,&quot;p1_castle&quot;)){&#xD;
+	log.log(&quot;Player 1 castling&quot;);&#xD;
+}&#xD;
 board_update.Player1MoveMessage(strdup(payload)).send();&#xD;
-&#xD;
 </body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_PUizcDuoEemh7Jv-t4KSvQ" port="_xpUqEDuOEemh7Jv-t4KSvQ">
@@ -307,32 +309,49 @@ move_valid.Player2MoveInvalid().send();</body>
               <language>C++</language>
               <body>using namespace std;&#xD;
 &#xD;
-//Convert Player 1 message to integer indexes&#xD;
-int P1_startCol = Player1Move[0] - '0';&#xD;
-int P1_startRow = Player1Move[1] - '0';&#xD;
-int P1_endCol = Player1Move[2] - '0';&#xD;
-int P1_endRow = Player1Move[3] - '0';&#xD;
-&#xD;
-//Update Board with Player 1 moves&#xD;
-log.log(&quot;[Board] Updating board with Player 1 moves&quot;);&#xD;
-if(ChessBoard[P1_endRow][P1_endCol] == 6){&#xD;
-	playerWins.Player1Wins().send();&#xD;
+if(strcmp(Player1Move,&quot;p1_castle&quot;) == 0){&#xD;
+	//Update Board with Player 1 castle&#xD;
+	log.log(&quot;[Board] Updating board with Player 1 castling&quot;);&#xD;
+	ChessBoard[0][2] = -2;&#xD;
+	ChessBoard[0][1] = -6;&#xD;
+	ChessBoard[0][0] = 0;&#xD;
+	ChessBoard[0][4] = 0;&#xD;
+	board_update.BoardUpdated().send();&#xD;
+	printBoard();&#xD;
 }&#xD;
 else{&#xD;
-	board_update.BoardUpdated().send();&#xD;
-}&#xD;
-updateBoard(P1_startCol,P1_startRow,P1_endCol,P1_endRow);&#xD;
-printBoard();</body>
+	//Convert Player 1 message to integer indexes&#xD;
+	int P1_startCol = Player1Move[0] - '0';&#xD;
+	int P1_startRow = Player1Move[1] - '0';&#xD;
+	int P1_endCol = Player1Move[2] - '0';&#xD;
+	int P1_endRow = Player1Move[3] - '0';&#xD;
+&#xD;
+	//Update Board with Player 1 moves&#xD;
+	log.log(&quot;[Board] Updating board with Player 1 moves&quot;);&#xD;
+	if(ChessBoard[P1_endRow][P1_endCol] == 6){&#xD;
+		playerWins.Player1Wins().send();&#xD;
+	}&#xD;
+	else{&#xD;
+		board_update.BoardUpdated().send();&#xD;
+	}&#xD;
+		updateBoard(P1_startCol,P1_startRow,P1_endCol,P1_endRow);&#xD;
+		printBoard();&#xD;
+}</body>
             </effect>
             <trigger xmi:type="uml:Trigger" xmi:id="_Ku56UEBkEemqJPrZwKkwWQ" event="_YXDGoEBGEemqJPrZwKkwWQ" port="_dMdL0EBFEemqJPrZwKkwWQ"/>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_wiHVcEtoEemM1b60lyH_SQ" kind="external" source="_pjunAEtoEemM1b60lyH_SQ" target="_uO5lID_BEemACYDE-qKd5g">
             <effect xmi:type="uml:OpaqueBehavior" xmi:id="_zL8ecEtoEemM1b60lyH_SQ" name="Effect" isReentrant="false">
               <language>C++</language>
-              <body>    log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);
-    updateBoard(startCol,startRow,endCol,endRow);
-    move_valid.Player2MoveValid(startCol, startRow, endCol, endRow,false).send();
-    printBoard();
+              <body>    log.log(&quot;[Board] Player 2 move valid, moving to Player 1 Turn&quot;);&#xD;
+    updateBoard(startCol,startRow,endCol,endRow);&#xD;
+//If the pawn reaches the other end of board, promote it to Queen&#xD;
+if(ChessBoard[endRow][endCol] == 1 &amp;&amp; endRow == 0){&#xD;
+	ChessBoard[endRow][endCol] = 5;&#xD;
+}&#xD;
+&#xD;
+    move_valid.Player2MoveValid(startCol, startRow, endCol, endRow,false).send();&#xD;
+    printBoard();&#xD;
 </body>
             </effect>
           </transition>
