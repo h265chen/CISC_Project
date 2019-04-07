@@ -30,11 +30,7 @@ public class MqttManager  {
 	MqttCallback mCallback;
 	IMqttActionListener mActionListener;
 
-<<<<<<< HEAD
-=======
-	//public static final String Player2Connected = "Player2Connected";
-	//public static final String Player1Connected = "Player1Connected";
->>>>>>> ecb030ec60da9534a874b0ae5801121e6b1a2478
+
 	public static final String PlayerConnected = "PlayerConnected";
 	public static final String Player2MoveDone = "Player2MoveDone";
 	public static final String Player1MoveDone = "Player1MoveDone";

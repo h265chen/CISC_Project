@@ -1,10 +1,2 @@
-/SampleAsyncCallBack$Disconnector$1.class
-/SampleAsyncCallBack$Disconnector.class
-/SampleAsyncCallBack$MqttConnector$1.class
-/SampleAsyncCallBack$MqttConnector.class
-/SampleAsyncCallBack$Subscriber$1.class
-/SampleAsyncCallBack$Subscriber.class
-/SampleAsyncCallBack.class
-/main/
 /mqtt/
-/ui/
+/main/

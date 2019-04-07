@@ -52,17 +52,9 @@ public class Connector {
 				switch (topic){
 					case MqttManager.PlayerConnected:
 						//Player 1 Connected
-<<<<<<< HEAD
-						if(message.toString().equals("Player1Connected")) {
-							mGame.setPlayerStatus(0,"Player 1 Connected");
-						}else{
-=======
-						String msg = message.toString();
-						System.out.println(message.toString());
-						if(msg.equals("Player1Connected")) {
+						if(payload.equals("Player1Connected")) {
 							mGame.setPlayerStatus(0,"Player 1 Connected");
 						}else  {
->>>>>>> ecb030ec60da9534a874b0ae5801121e6b1a2478
 							mGame.setPlayerStatus(1, "Player 2 Connected");
 							mGame.setPlayerStatus(0, "Player 1 turn");
 						}
