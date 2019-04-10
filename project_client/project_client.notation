@@ -665,7 +665,7 @@
       <element xmi:type="uml:Transition" href="project_client.uml#_h2VScDuOEemh7Jv-t4KSvQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h2viIjuOEemh7Jv-t4KSvQ" points="[2, -1, -90, 3]$[91, -4, -1, 0]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h34xoDuOEemh7Jv-t4KSvQ" id="(0.95,0.55)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h34xoTuOEemh7Jv-t4KSvQ" id="(0.025,0.5)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h34xoTuOEemh7Jv-t4KSvQ" id="(0.0,0.425)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_zsTOcDuOEemh7Jv-t4KSvQ" type="Transition_Edge" source="_gejAIDuOEemh7Jv-t4KSvQ" target="_tn1KkDuOEemh7Jv-t4KSvQ">
       <children xmi:type="notation:DecorationNode" xmi:id="_zsTOczuOEemh7Jv-t4KSvQ" type="Transition_NameLabel">
